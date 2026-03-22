@@ -1,0 +1,16 @@
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Documentos locais (não versionar notas .docx por padrão)
+*.docx
+*.doc
+
+# Opcional: descomente se não quiser versionar config local do Cursor
+# .cursor/

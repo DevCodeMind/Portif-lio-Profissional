@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Odontologia — consultório moderno e agendamento." />
+  <title>Dr. Nome — Odontologia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #0284c7;
+      --brand-dark: #0369a1;
+      --border: #e2e8f0;
+      --footer: #0f172a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 1rem;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Barra superior */
+    .barra-topo {
+      background: var(--text);
+      color: #e2e8f0;
+      font-size: 0.8rem;
+      padding: 0.45rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .barra-topo a { color: #7dd3fc; }
+
+    /* Header fixo estilo clínica */
+    .cabecalho {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .cabecalho-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+    .marca {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+    .marca span { color: var(--brand); }
+    .nav-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--brand); }
+    .btn-cta {
+      background: var(--brand);
+      color: #fff !important;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .btn-cta:hover { background: var(--brand-dark); }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+    }
+
+    /* Hero: faixa azul + grid 3 ícones */
+    .faixa-hero {
+      background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0ea5e9 100%);
+      color: #fff;
+      padding: 3.5rem 0 4rem;
+    }
+    .faixa-hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.85rem, 4vw, 2.65rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 18ch;
+      margin-bottom: 1rem;
+    }
+    .faixa-hero .sub {
+      opacity: 0.92;
+      max-width: 38ch;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .grid-tres {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 700px) { .grid-tres { grid-template-columns: 1fr; } }
+    .item-tres {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .item-tres .ico { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .item-tres strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .item-tres span { font-size: 0.82rem; opacity: 0.9; }
+
+    /* Faixa branca: texto + cards retos */
+    .secao-branca { padding: 4rem 0; }
+    .titulo-secao {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand);
+      font-size: 0.75rem;
+    }
+    .secao-branca h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 1.85rem);
+      margin-bottom: 1.5rem;
+    }
+    .texto-muted { color: var(--muted); max-width: 60ch; margin-bottom: 2rem; }
+
+    .cards-retos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 800px) { .cards-retos { grid-template-columns: 1fr; } }
+    .card-reto {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      background: var(--surface);
+    }
+    .card-reto h3 { font-size: 1.05rem; margin-bottom: 0.5rem; font-weight: 600; }
+    .card-reto p { color: var(--muted); font-size: 0.92rem; }
+
+    .faixa-servicos {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 0;
+    }
+    .lista-servicos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      list-style: none;
+    }
+    @media (max-width: 800px) { .lista-servicos { grid-template-columns: 1fr; } }
+    .lista-servicos li {
+      padding-left: 1rem;
+      border-left: 3px solid var(--brand);
+    }
+    .lista-servicos strong { display: block; margin-bottom: 0.35rem; }
+
+    .cta-final {
+      text-align: center;
+      padding: 3.5rem 1rem;
+    }
+    .cta-final h2 { font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .cta-final p { color: var(--muted); margin-bottom: 1.25rem; }
+    .btn-grande {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff !important;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .btn-grande:hover { background: var(--brand-dark); }
+
+    footer {
+      background: var(--footer);
+      color: #94a3b8;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+    footer a { color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <div class="barra-topo">
+    <span>CRO 00/00000</span>
+    <a href="tel:+5511999999999">(11) 99999-9999</a>
+    <span>Seg–Sex 8h–18h</span>
+  </div>
+
+  <header class="cabecalho">
+    <div class="wrap cabecalho-inner">
+      <p class="marca">Dr. Nome <span>Sobrenome</span></p>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn-cta" href="#contato">Agendar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="faixa-hero">
+      <div class="wrap">
+        <h1>Sorriso saudável com diagnóstico claro</h1>
+        <p class="sub">Consultório com protocolos de biossegurança, equipamentos modernos e planos de tratamento explicados com transparência.</p>
+        <div class="grid-tres">
+          <div class="item-tres">
+            <div class="ico" aria-hidden="true">🦷</div>
+            <strong>Preventivo</strong>
+            <span>Profilaxia e check-up regular</span>
+          </div>
+          <div class="item-tres">
+            <div class="ico" aria-hidden="true">✨</div>
+            <strong>Estética</strong>
+            <span>Clareamento e facetas</span>
+          </div>
+          <div class="item-tres">
+            <div class="ico" aria-hidden="true">⚙</div>
+            <strong>Reabilitação</strong>
+            <span>Implantes e próteses</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="secao-branca">
+      <div class="wrap">
+        <p class="titulo-secao">Sobre</p>
+        <h2>Consultório odontológico</h2>
+        <p class="texto-muted">
+          Sou dentista formado(a) em [faculdade], com experiência em [ortodontia, implantes]. Priorizo diagnóstico cuidadoso e acompanhamento em cada etapa do tratamento.
+        </p>
+        <div class="cards-retos">
+          <div class="card-reto">
+            <h3>Diagnóstico didático</h3>
+            <p>Explicação clara do que precisa ser feito, com opções e prazos.</p>
+          </div>
+          <div class="card-reto">
+            <h3>Agenda organizada</h3>
+            <p>Horários combinados e confirmação para respeitar seu tempo.</p>
+          </div>
+          <div class="card-reto">
+            <h3>Biossegurança</h3>
+            <p>Protocolos atualizados para sua tranquilidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="faixa-servicos">
+      <div class="wrap">
+        <p class="titulo-secao">Serviços</p>
+        <h2 style="margin-bottom: 2rem;">O que oferecemos</h2>
+        <ul class="lista-servicos">
+          <li><strong>Clínica geral e urgência</strong><span class="texto-muted" style="display:block;font-size:0.92rem;">Restaurações e alívio de dor aguda.</span></li>
+          <li><strong>Estética e clareamento</strong><span class="texto-muted" style="display:block;font-size:0.92rem;">Lentes, facetas e clareamento supervisionado.</span></li>
+          <li><strong>Implantes e próteses</strong><span class="texto-muted" style="display:block;font-size:0.92rem;">Planejamento com imagens e reposição funcional.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contato" class="cta-final">
+      <h2>Agende sua avaliação</h2>
+      <p>Envie uma mensagem — retorno com horários e valores.</p>
+      <a class="btn-grande" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vim%20pela%20landing%20de%20odontologia." target="_blank" rel="noopener noreferrer">Me chame aqui</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="y"></span> Dr. Nome Sobrenome · Odontologia · <a href="mailto:contato@email.com">contato@email.com</a></p>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
