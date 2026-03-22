@@ -64,7 +64,7 @@
       text-decoration: none;
     }
 
-    .wrap {
+    .conteiner {
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 1.5rem;
@@ -83,7 +83,7 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
-    .nav {
+    .navegacao {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -91,7 +91,7 @@
       gap: 1rem;
     }
 
-    .logo {
+    .logotipo {
       font-family: "Bebas Neue", sans-serif;
       font-weight: 400;
       font-size: 1.5rem;
@@ -100,7 +100,7 @@
       text-transform: uppercase;
     }
 
-    .nav-links {
+    .navegacao-links {
       display: flex;
       align-items: center;
       gap: 2rem;
@@ -108,13 +108,13 @@
       font-weight: 500;
     }
 
-    .nav-links a:not(.btn-header) {
+    .navegacao-links a:not(.botao-cabecalho) {
       color: var(--text-muted);
       transition: var(--transition);
       position: relative;
     }
 
-    .nav-links a:not(.btn-header)::after {
+    .navegacao-links a:not(.botao-cabecalho)::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -125,15 +125,15 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:not(.btn-header):hover::after {
+    .navegacao-links a:not(.botao-cabecalho):hover::after {
       width: 100%;
     }
 
-    .nav-links a:not(.btn-header):hover {
+    .navegacao-links a:not(.botao-cabecalho):hover {
       color: var(--accent);
     }
 
-    .btn-header {
+    .botao-cabecalho {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -149,23 +149,23 @@
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
 
-    .btn-header:hover {
+    .botao-cabecalho:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
     }
 
     @media (max-width: 768px) {
-      .nav-links a:not(.btn-header) {
+      .navegacao-links a:not(.botao-cabecalho) {
         display: none;
       }
-      .nav {
+      .navegacao {
         padding: 1rem 0;
       }
     }
 
     /* Hero */
-    .hero {
+    .destaque {
       padding: 8rem 0 6rem;
       position: relative;
       overflow: hidden;
@@ -175,7 +175,7 @@
       background: linear-gradient(135deg, var(--bg) 0%, rgba(37, 99, 235, 0.05) 100%);
     }
 
-    .hero::before {
+    .destaque::before {
       content: '';
       position: absolute;
       top: 0;
@@ -186,7 +186,7 @@
       z-index: -1;
     }
 
-    .hero::after {
+    .destaque::after {
       content: '';
       position: absolute;
       top: 20%;
@@ -203,14 +203,14 @@
       50% { transform: translateY(-20px) rotate(5deg); }
     }
 
-    .hero-grid {
+    .destaque-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-content h1 {
+    .destaque-content h1 {
       font-family: "Bebas Neue", sans-serif;
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 400;
@@ -221,13 +221,13 @@
       letter-spacing: 0.05em;
     }
 
-    .hero-content .highlight {
+    .destaque-content .highlight {
       color: var(--accent);
       position: relative;
       display: inline-block;
     }
 
-    .hero-content .highlight::after {
+    .destaque-content .highlight::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -238,21 +238,21 @@
       border-radius: 2px;
     }
 
-    .hero-content p {
+    .destaque-content p {
       font-size: 1.2rem;
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 2rem;
     }
 
-    .hero-features {
+    .destaque-features {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-bottom: 2.5rem;
     }
 
-    .feature-item {
+    .item-recurso {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -263,7 +263,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    .feature-icon {
+    .icone-recurso {
       width: 40px;
       height: 40px;
       background: var(--accent-soft);
@@ -276,25 +276,25 @@
       flex-shrink: 0;
     }
 
-    .feature-text h4 {
+    .texto-recurso h4 {
       font-size: 0.9rem;
       font-weight: 600;
       color: var(--text);
       margin-bottom: 0.25rem;
     }
 
-    .feature-text p {
+    .texto-recurso p {
       font-size: 0.8rem;
       color: var(--text-muted);
     }
 
-    .hero-cta {
+    .destaque-cta {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
+    .botao-primario {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -310,13 +310,13 @@
       box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
     }
 
-    .btn-primary:hover {
+    .botao-primario:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
     }
 
-    .btn-secondary {
+    .botao-secundario {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -332,17 +332,17 @@
       transition: var(--transition);
     }
 
-    .btn-secondary:hover {
+    .botao-secundario:hover {
       background: var(--accent);
       color: var(--bg-card);
       transform: translateY(-2px);
     }
 
-    .hero-image {
+    .destaque-image {
       position: relative;
     }
 
-    .hero-image img {
+    .destaque-image img {
       width: 100%;
       height: auto;
       border-radius: var(--radius);
@@ -350,7 +350,7 @@
       filter: brightness(1.05) contrast(1.05);
     }
 
-    .hero-image::before {
+    .destaque-image::before {
       content: '';
       position: absolute;
       top: -20px;
@@ -364,31 +364,31 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid {
+      .destaque-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
       }
-      .hero-features {
+      .destaque-features {
         grid-template-columns: 1fr;
       }
-      .hero-cta {
+      .destaque-cta {
         justify-content: center;
       }
     }
 
     /* Services */
-    .services {
+    .servicos {
       padding: 5rem 0;
       background: var(--bg-accent);
     }
 
-    .section-header {
+    .cabecalho-secao {
       text-align: center;
       margin-bottom: 4rem;
     }
 
-    .section-header h2 {
+    .cabecalho-secao h2 {
       font-family: "Bebas Neue", sans-serif;
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 400;
@@ -398,20 +398,20 @@
       letter-spacing: 0.05em;
     }
 
-    .section-header p {
+    .cabecalho-secao p {
       font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .services-grid {
+    .servicos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
-    .service-card {
+    .cartao-servico {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -422,7 +422,7 @@
       overflow: hidden;
     }
 
-    .service-card::before {
+    .cartao-servico::before {
       content: '';
       position: absolute;
       top: 0;
@@ -434,17 +434,17 @@
       transition: transform 0.3s ease;
     }
 
-    .service-card:hover::before {
+    .cartao-servico:hover::before {
       transform: scaleX(1);
     }
 
-    .service-card:hover {
+    .cartao-servico:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
       border-color: var(--accent);
     }
 
-    .service-icon {
+    .icone-servico {
       width: 70px;
       height: 70px;
       background: var(--accent-soft);
@@ -458,7 +458,7 @@
       position: relative;
     }
 
-    .service-icon::after {
+    .icone-servico::after {
       content: '';
       position: absolute;
       inset: -2px;
@@ -469,11 +469,11 @@
       transition: opacity 0.3s ease;
     }
 
-    .service-card:hover .service-icon::after {
+    .cartao-servico:hover .icone-servico::after {
       opacity: 0.2;
     }
 
-    .service-card h3 {
+    .cartao-servico h3 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 1rem;
@@ -482,7 +482,7 @@
       letter-spacing: 0.05em;
     }
 
-    .service-card p {
+    .cartao-servico p {
       color: var(--text-muted);
       line-height: 1.6;
     }
@@ -509,19 +509,19 @@
     }
 
     /* About */
-    .about {
+    .sobre {
       padding: 5rem 0;
       background: var(--bg);
     }
 
-    .about-grid {
+    .sobre-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .about-content h2 {
+    .sobre-content h2 {
       font-family: "Bebas Neue", sans-serif;
       font-size: 3rem;
       font-weight: 400;
@@ -531,21 +531,21 @@
       letter-spacing: 0.05em;
     }
 
-    .about-content p {
+    .sobre-content p {
       font-size: 1.1rem;
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
-    .about-features {
+    .sobre-features {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
-    .about-feature {
+    .sobre-feature {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -556,7 +556,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    .about-feature-icon {
+    .sobre-feature-icon {
       width: 40px;
       height: 40px;
       background: var(--accent-soft);
@@ -569,19 +569,19 @@
       flex-shrink: 0;
     }
 
-    .about-feature-text {
+    .sobre-feature-text {
       font-weight: 600;
       color: var(--text);
       font-size: 0.9rem;
     }
 
     @media (max-width: 900px) {
-      .about-grid {
+      .sobre-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
       }
-      .about-features {
+      .sobre-features {
         grid-template-columns: 1fr;
       }
     }
@@ -626,7 +626,7 @@
       z-index: 1;
     }
 
-    .cta .btn-primary {
+    .cta .botao-primario {
       background: var(--bg-card);
       color: var(--accent);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -634,7 +634,7 @@
       z-index: 1;
     }
 
-    .cta .btn-primary:hover {
+    .cta .botao-primario:hover {
       background: var(--text);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
@@ -654,24 +654,24 @@
 
     /* Responsive */
     @media (max-width: 640px) {
-      .hero {
+      .destaque {
         padding: 6rem 0 4rem;
         min-height: auto;
       }
-      .services {
+      .servicos {
         padding: 3rem 0;
       }
-      .about {
+      .sobre {
         padding: 3rem 0;
       }
       .cta {
         padding: 3rem 0;
       }
-      .hero-cta {
+      .destaque-cta {
         flex-direction: column;
         align-items: center;
       }
-      .services-grid {
+      .servicos-grid {
         grid-template-columns: 1fr;
       }
       .cta h2 {
@@ -683,12 +683,12 @@
 <body>
   <header>
     <div class="wrap nav">
-      <div class="logo">NOME</div>
-      <nav class="nav-links">
+      <div class="logotipo">NOME</div>
+      <nav class="links-navegacao">
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="btn-header" target="_blank">
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="botao-cabecalho" target="_blank">
           Orçamento
         </a>
       </nav>
@@ -696,73 +696,73 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-content">
+    <section class="destaque">
+      <div class="conteiner">
+        <div class="grade-destaque">
+          <div class="conteudo-destaque">
             <h1>Seu Carro em <span class="highlight">Boas Mãos</span></h1>
             <p>Oficina mecânica completa com profissionais especializados. Diagnóstico preciso, reparos de qualidade e garantia em todos os serviços.</p>
 
-            <div class="hero-features">
-              <div class="feature-item">
-                <div class="feature-icon">🔧</div>
-                <div class="feature-text">
+            <div class="recursos-destaque">
+              <div class="item-recurso">
+                <div class="icone-recurso">🔧</div>
+                <div class="texto-recurso">
                   <h4>Diagnóstico Digital</h4>
                   <p>Equipamentos modernos e precisos</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">🛡️</div>
-                <div class="feature-text">
+              <div class="item-recurso">
+                <div class="icone-recurso">🛡️</div>
+                <div class="texto-recurso">
                   <h4>Garantia Total</h4>
                   <p>Em todos os serviços realizados</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">⏰</div>
-                <div class="feature-text">
+              <div class="item-recurso">
+                <div class="icone-recurso">⏰</div>
+                <div class="texto-recurso">
                   <h4>Agilidade</h4>
                   <p>Serviço rápido sem perder qualidade</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">💰</div>
-                <div class="feature-text">
+              <div class="item-recurso">
+                <div class="icone-recurso">💰</div>
+                <div class="texto-recurso">
                   <h4>Preços Justos</h4>
                   <p>Transparência e melhor custo-benefício</p>
                 </div>
               </div>
             </div>
 
-            <div class="hero-cta">
-              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="btn-primary" target="_blank">
+            <div class="chamada-destaque">
+              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="botao-primario" target="_blank">
                 <span>Peça Orçamento</span>
                 <span>🔧</span>
               </a>
-              <a href="#servicos" class="btn-secondary">
+              <a href="#servicos" class="botao-secundario">
                 <span>Ver Serviços</span>
                 <span>↓</span>
               </a>
             </div>
           </div>
 
-          <div class="hero-image">
+          <div class="imagem-destaque">
             <img src="https://images.unsplash.com/photo-1632823471565-1ec60b2f9ea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Oficina Mecânica" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="services">
-      <div class="wrap">
-        <div class="section-header">
+    <section id="servicos" class="servicos">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
           <h2>Nossos Serviços</h2>
           <p>Serviços completos de manutenção e reparo automotivo com equipamentos modernos e profissionais qualificados.</p>
         </div>
 
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🔍</div>
+        <div class="grade-servicos">
+          <div class="cartao-servico">
+            <div class="icone-servico">🔍</div>
             <h3>Diagnóstico Eletrônico</h3>
             <p>Diagnóstico completo do sistema eletrônico do veículo usando equipamentos de última geração para identificar problemas com precisão.</p>
             <div class="service-features">
@@ -772,8 +772,8 @@
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">⚙️</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">⚙️</div>
             <h3>Manutenção Preventiva</h3>
             <p>Troca de óleo, filtros, velas, correias e todos os itens necessários para manter seu veículo em perfeitas condições.</p>
             <div class="service-features">
@@ -783,8 +783,8 @@
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🔧</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🔧</div>
             <h3>Reparos Mecânicos</h3>
             <p>Reparo de motor, suspensão, freios, transmissão e todos os sistemas mecânicos do veículo com peças de qualidade.</p>
             <div class="service-features">
@@ -794,8 +794,8 @@
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🔋</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🔋</div>
             <h3>Sistema Elétrico</h3>
             <p>Reparo e manutenção de bateria, alternador, motor de partida, fiação elétrica e todos os componentes elétricos.</p>
             <div class="service-features">
@@ -805,8 +805,8 @@
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🛠️</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🛠️</div>
             <h3>Funilaria e Pintura</h3>
             <p>Reparo de lataria, pintura automotiva profissional e restauração completa da carroceria do veículo.</p>
             <div class="service-features">
@@ -816,8 +816,8 @@
             </div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🚗</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🚗</div>
             <h3>Inspeção Veicular</h3>
             <p>Inspeção completa do veículo para detectar problemas ocultos e garantir segurança e conformidade com as normas.</p>
             <div class="service-features">
@@ -831,7 +831,7 @@
     </section>
 
     <section id="sobre" class="about">
-      <div class="wrap">
+      <div class="conteiner">
         <div class="about-grid">
           <div class="about-content">
             <h2>Experiência que Conta</h2>
@@ -866,10 +866,10 @@
     </section>
 
     <section class="cta">
-      <div class="wrap">
+      <div class="conteiner">
         <h2>Seu Carro Merece o Melhor</h2>
         <p>Solicite seu orçamento agora mesmo e tenha seu veículo cuidado por profissionais que entendem do assunto.</p>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="btn-primary" target="_blank">
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="botao-primario" target="_blank">
           <span>Solicitar Orçamento</span>
           <span>🚀</span>
         </a>
@@ -878,7 +878,7 @@
   </main>
 
   <footer>
-    <div class="wrap">
+    <div class="conteiner">
       <p>© 2024 Nome — Oficina Mecânica. Todos os direitos reservados.</p>
     </div>
   </footer>
@@ -917,7 +917,7 @@
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .about-content, .about-image').forEach(el => {
+    document.querySelectorAll('.cartao-servico, .sobre-content, .sobre-image').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

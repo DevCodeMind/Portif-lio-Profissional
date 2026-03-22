@@ -50,7 +50,7 @@
       color: inherit;
     }
 
-    .wrap {
+    .conteiner {
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 1.25rem;
@@ -66,7 +66,7 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .nav {
+    .navegacao {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -74,31 +74,31 @@
       gap: 1rem;
     }
 
-    .logo {
+    .logotipo {
       font-family: "Fraunces", Georgia, serif;
       font-weight: 600;
       font-size: 1.15rem;
       letter-spacing: -0.02em;
     }
 
-    .nav-links {
+    .navegacao-links {
       display: flex;
       align-items: center;
       gap: 1.5rem;
       font-size: 0.95rem;
     }
 
-    .nav-links a:not(.btn-header) {
+    .navegacao-links a:not(.botao-cabecalho) {
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .nav-links a:not(.btn-header):hover {
+    .navegacao-links a:not(.botao-cabecalho):hover {
       color: var(--accent);
     }
 
-    .btn-header {
+    .botao-cabecalho {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -112,23 +112,23 @@
       transition: background 0.2s, transform 0.15s;
     }
 
-    .btn-header:hover {
+    .botao-cabecalho:hover {
       background: var(--accent-hover);
       transform: translateY(-1px);
     }
 
     @media (max-width: 640px) {
-      .nav-links a:not(.btn-header) {
+      .navegacao-links a:not(.botao-cabecalho) {
         display: none;
       }
     }
 
     /* Hero */
-    .hero {
+    .destaque {
       padding: 4rem 0 5rem;
     }
 
-    .hero-grid {
+    .destaque-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
@@ -136,14 +136,14 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid {
+      .destaque-grid {
         grid-template-columns: 1fr;
         text-align: center;
       }
-      .hero-badges {
+      .destaque-badges {
         justify-content: center;
       }
-      .hero-cta {
+      .destaque-cta {
         justify-content: center;
       }
     }
@@ -158,7 +158,7 @@
       margin-bottom: 1rem;
     }
 
-    .hero h1 {
+    .destaque h1 {
       font-family: "Fraunces", Georgia, serif;
       font-size: clamp(2rem, 4vw, 2.85rem);
       font-weight: 600;
@@ -167,7 +167,7 @@
       margin-bottom: 1rem;
     }
 
-    .hero-lead {
+    .destaque-lead {
       color: var(--text-muted);
       font-size: 1.1rem;
       max-width: 32ch;
@@ -175,13 +175,13 @@
     }
 
     @media (max-width: 900px) {
-      .hero-lead {
+      .destaque-lead {
         margin-left: auto;
         margin-right: auto;
       }
     }
 
-    .hero-badges {
+    .destaque-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
@@ -197,14 +197,14 @@
       font-weight: 500;
     }
 
-    .hero-cta {
+    .destaque-cta {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       align-items: center;
     }
 
-    .btn-primary {
+    .botao-primario {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -222,7 +222,7 @@
       box-shadow: 0 8px 24px rgba(61, 107, 92, 0.28);
     }
 
-    .btn-primary:hover {
+    .botao-primario:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 12px 28px rgba(61, 107, 92, 0.35);
@@ -247,11 +247,11 @@
       color: var(--accent);
     }
 
-    .hero-visual {
+    .destaque-visual {
       position: relative;
     }
 
-    .hero-card {
+    .destaque-card {
       background: var(--bg-card);
       border-radius: 20px;
       padding: 2rem;
@@ -259,12 +259,12 @@
       border: 1px solid var(--border);
     }
 
-    .hero-card p {
+    .destaque-card p {
       color: var(--text-muted);
       font-size: 0.95rem;
     }
 
-    .hero-card strong {
+    .destaque-card strong {
       color: var(--text);
     }
 
@@ -407,18 +407,18 @@
 <body>
   <header>
     <div class="wrap nav">
-      <span class="logo">Dra. Nome Sobrenome</span>
-      <nav class="nav-links" aria-label="Principal">
+      <span class="logotipo">Dra. Nome Sobrenome</span>
+      <nav class="links-navegacao" aria-label="Principal">
         <a href="#sobre">Sobre</a>
         <a href="#areas">Áreas</a>
         <a href="#contato">Contato</a>
-        <a class="btn-header" href="#contato">Me chame aqui</a>
+        <a class="botao-cabecalho" href="#contato">Me chame aqui</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="destaque">
       <div class="wrap hero-grid">
         <div>
           <span class="badge">Psicologia clínica</span>
@@ -431,8 +431,8 @@
             <span class="pill">Online</span>
             <span class="pill">Humanizado</span>
           </div>
-          <div class="hero-cta">
-            <a class="btn-primary" href="#contato">Me chame aqui</a>
+          <div class="chamada-destaque">
+            <a class="botao-primario" href="#contato">Me chame aqui</a>
             <a class="btn-ghost" href="#sobre">Conhecer o trabalho</a>
           </div>
         </div>
@@ -448,7 +448,7 @@
     </section>
 
     <section id="sobre">
-      <div class="wrap">
+      <div class="conteiner">
         <h2 class="section-title">Sobre mim</h2>
         <p class="section-sub">
           Sou psicóloga formada em [sua faculdade], com experiência em [sua linha ou foco]. Acredito no vínculo terapêutico como base para mudanças reais e duradouras.
@@ -474,7 +474,7 @@
     </section>
 
     <section id="areas">
-      <div class="wrap">
+      <div class="conteiner">
         <h2 class="section-title">Áreas de atuação</h2>
         <p class="section-sub">
           Alguns dos temas mais frequentes no consultório — podemos conversar sobre o que faz sentido para você.
@@ -497,7 +497,7 @@
     </section>
 
     <section id="contato">
-      <div class="wrap">
+      <div class="conteiner">
         <div class="cta-band">
           <h2>Pronto para dar o primeiro passo?</h2>
           <p>
@@ -510,7 +510,7 @@
   </main>
 
   <footer>
-    <div class="wrap">
+    <div class="conteiner">
       <p>
         © <span id="y"></span> Dra. Nome Sobrenome — Psicóloga · CRP 00/00000<br />
         <a href="mailto:contato@email.com">contato@email.com</a>

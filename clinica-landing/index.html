@@ -29,7 +29,7 @@
     }
     a { color: var(--navy-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    .conteiner { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
 
     /* Faixa institucional */
     .faixa-navy {
@@ -64,17 +64,17 @@
       color: var(--navy);
     }
     .sub-clinica { font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; }
-    .nav-horizontal {
+    .navegacao-horizontal {
       display: flex;
       gap: 1.5rem;
       font-size: 0.9rem;
       font-weight: 600;
     }
-    .nav-horizontal a { color: var(--navy); }
-    .nav-horizontal a:hover { color: var(--navy-light); text-decoration: none; border-bottom: 2px solid var(--navy); }
+    .navegacao-horizontal a { color: var(--navy); }
+    .navegacao-horizontal a:hover { color: var(--navy-light); text-decoration: none; border-bottom: 2px solid var(--navy); }
 
     /* Hero em duas colunas: texto | card agenda */
-    .hero-split {
+    .destaque-split {
       display: grid;
       grid-template-columns: 1fr 340px;
       gap: 2.5rem;
@@ -82,9 +82,9 @@
       padding: 3rem 0 4rem;
     }
     @media (max-width: 900px) {
-      .hero-split { grid-template-columns: 1fr; }
+      .destaque-split { grid-template-columns: 1fr; }
     }
-    .hero-split h1 {
+    .destaque-split h1 {
       font-family: "Source Serif 4", Georgia, serif;
       font-size: clamp(1.75rem, 3.5vw, 2.35rem);
       font-weight: 700;
@@ -92,7 +92,7 @@
       line-height: 1.2;
       margin-bottom: 1rem;
     }
-    .hero-split .intro { color: var(--muted); max-width: 48ch; margin-bottom: 1.5rem; }
+    .destaque-split .intro { color: var(--muted); max-width: 48ch; margin-bottom: 1.5rem; }
 
     .card-agenda {
       background: var(--paper);
@@ -171,7 +171,7 @@
       color: var(--navy);
       margin-bottom: 1rem;
     }
-    .secao-texto > .wrap > p { color: var(--muted); max-width: 65ch; margin-bottom: 1.5rem; }
+    .secao-texto > .conteiner > p { color: var(--muted); max-width: 65ch; margin-bottom: 1.5rem; }
 
     .tabela-especialidades {
       width: 100%;
@@ -262,7 +262,7 @@
     </div>
 
     <div class="passos">
-      <div class="wrap" style="display:contents">
+      <div class="conteiner" style="display:contents">
         <div class="passo">
           <div class="num">1</div>
           <strong>Envie sua solicitação</strong>
@@ -282,7 +282,7 @@
     </div>
 
     <section id="sobre" class="secao-texto">
-      <div class="wrap">
+      <div class="conteiner">
         <h2>Sobre a clínica</h2>
         <p>
           Equipe com CRM ativo e salas preparadas para o conforto do paciente. Mantemos histórico seguro e sigiloso, com possibilidade de retorno e leitura de exames no mesmo local quando aplicável.
@@ -291,7 +291,7 @@
     </section>
 
     <section id="especialidades" class="secao-texto" style="background:var(--paper);padding-top:2.5rem;padding-bottom:2.5rem;">
-      <div class="wrap">
+      <div class="conteiner">
         <h2>Especialidades (exemplos)</h2>
         <p>Confirme disponibilidade por especialidade ao agendar.</p>
         <table class="tabela-especialidades">

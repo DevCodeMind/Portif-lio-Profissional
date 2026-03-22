@@ -59,7 +59,7 @@
       text-decoration: none;
     }
 
-    .wrap {
+    .conteiner {
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 1.5rem;
@@ -76,7 +76,7 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
-    .nav {
+    .navegacao {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -84,7 +84,7 @@
       gap: 1rem;
     }
 
-    .logo {
+    .logotipo {
       font-family: "Playfair Display", Georgia, serif;
       font-weight: 700;
       font-size: 1.25rem;
@@ -92,7 +92,7 @@
       color: var(--accent);
     }
 
-    .nav-links {
+    .navegacao-links {
       display: flex;
       align-items: center;
       gap: 2rem;
@@ -100,13 +100,13 @@
       font-weight: 500;
     }
 
-    .nav-links a:not(.btn-header) {
+    .navegacao-links a:not(.botao-cabecalho) {
       color: var(--text-muted);
       transition: var(--transition);
       position: relative;
     }
 
-    .nav-links a:not(.btn-header)::after {
+    .navegacao-links a:not(.botao-cabecalho)::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -117,15 +117,15 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:not(.btn-header):hover::after {
+    .navegacao-links a:not(.botao-cabecalho):hover::after {
       width: 100%;
     }
 
-    .nav-links a:not(.btn-header):hover {
+    .navegacao-links a:not(.botao-cabecalho):hover {
       color: var(--accent);
     }
 
-    .btn-header {
+    .botao-cabecalho {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -139,29 +139,29 @@
       box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
     }
 
-    .btn-header:hover {
+    .botao-cabecalho:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
     }
 
     @media (max-width: 768px) {
-      .nav-links a:not(.btn-header) {
+      .navegacao-links a:not(.botao-cabecalho) {
         display: none;
       }
-      .nav {
+      .navegacao {
         padding: 1rem 0;
       }
     }
 
     /* Hero */
-    .hero {
+    .destaque {
       padding: 5rem 0 6rem;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
+    .destaque::before {
       content: '';
       position: absolute;
       top: 0;
@@ -174,14 +174,14 @@
       z-index: -1;
     }
 
-    .hero-grid {
+    .destaque-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-content h1 {
+    .destaque-content h1 {
       font-family: "Playfair Display", Georgia, serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
@@ -190,12 +190,12 @@
       color: var(--text);
     }
 
-    .hero-content .highlight {
+    .destaque-content .highlight {
       color: var(--accent);
       position: relative;
     }
 
-    .hero-content .highlight::after {
+    .destaque-content .highlight::after {
       content: '';
       position: absolute;
       bottom: -2px;
@@ -206,14 +206,14 @@
       border-radius: 2px;
     }
 
-    .hero-content p {
+    .destaque-content p {
       font-size: 1.2rem;
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 2rem;
     }
 
-    .hero-badges {
+    .destaque-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -237,13 +237,13 @@
       font-size: 1rem;
     }
 
-    .hero-cta {
+    .destaque-cta {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
+    .botao-primario {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -257,13 +257,13 @@
       box-shadow: 0 4px 16px rgba(30, 64, 175, 0.3);
     }
 
-    .btn-primary:hover {
+    .botao-primario:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(30, 64, 175, 0.4);
     }
 
-    .btn-secondary {
+    .botao-secundario {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -277,17 +277,17 @@
       transition: var(--transition);
     }
 
-    .btn-secondary:hover {
+    .botao-secundario:hover {
       background: var(--accent);
       color: white;
       transform: translateY(-2px);
     }
 
-    .hero-image {
+    .destaque-image {
       position: relative;
     }
 
-    .hero-image img {
+    .destaque-image img {
       width: 100%;
       height: auto;
       border-radius: var(--radius);
@@ -295,18 +295,18 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid {
+      .destaque-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
       }
-      .hero-badges {
+      .destaque-badges {
         justify-content: center;
       }
-      .hero-cta {
+      .destaque-cta {
         justify-content: center;
       }
-      .hero::before {
+      .destaque::before {
         width: 300px;
         height: 300px;
         transform: translate(20%, -20%);
@@ -314,17 +314,17 @@
     }
 
     /* Services */
-    .services {
+    .servicos {
       padding: 5rem 0;
       background: var(--bg-card);
     }
 
-    .section-header {
+    .cabecalho-secao {
       text-align: center;
       margin-bottom: 4rem;
     }
 
-    .section-header h2 {
+    .cabecalho-secao h2 {
       font-family: "Playfair Display", Georgia, serif;
       font-size: clamp(2rem, 4vw, 2.5rem);
       font-weight: 700;
@@ -332,20 +332,20 @@
       color: var(--text);
     }
 
-    .section-header p {
+    .cabecalho-secao p {
       font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .services-grid {
+    .servicos-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
-    .service-card {
+    .cartao-servico {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -354,13 +354,13 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
-    .service-card:hover {
+    .cartao-servico:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
       border-color: rgba(30, 64, 175, 0.2);
     }
 
-    .service-icon {
+    .icone-servico {
       width: 60px;
       height: 60px;
       background: var(--accent-soft);
@@ -373,32 +373,32 @@
       color: var(--accent);
     }
 
-    .service-card h3 {
+    .cartao-servico h3 {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 1rem;
       color: var(--text);
     }
 
-    .service-card p {
+    .cartao-servico p {
       color: var(--text-muted);
       line-height: 1.6;
     }
 
     /* About */
-    .about {
+    .sobre {
       padding: 5rem 0;
       background: var(--bg-accent);
     }
 
-    .about-grid {
+    .sobre-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .about-content h2 {
+    .sobre-content h2 {
       font-family: "Playfair Display", Georgia, serif;
       font-size: 2.25rem;
       font-weight: 700;
@@ -406,14 +406,14 @@
       color: var(--text);
     }
 
-    .about-content p {
+    .sobre-content p {
       font-size: 1.1rem;
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
-    .about-stats {
+    .sobre-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
@@ -440,12 +440,12 @@
     }
 
     @media (max-width: 900px) {
-      .about-grid {
+      .sobre-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
       }
-      .about-stats {
+      .sobre-stats {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -471,13 +471,13 @@
       opacity: 0.9;
     }
 
-    .cta .btn-primary {
+    .cta .botao-primario {
       background: white;
       color: var(--accent);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .cta .btn-primary:hover {
+    .cta .botao-primario:hover {
       background: var(--bg-card);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
@@ -496,29 +496,29 @@
 
     /* Responsive */
     @media (max-width: 640px) {
-      .hero {
+      .destaque {
         padding: 3rem 0 4rem;
       }
-      .services {
+      .servicos {
         padding: 3rem 0;
       }
-      .about {
+      .sobre {
         padding: 3rem 0;
       }
       .cta {
         padding: 3rem 0;
       }
-      .hero-badges {
+      .destaque-badges {
         justify-content: center;
       }
-      .hero-cta {
+      .destaque-cta {
         flex-direction: column;
         align-items: center;
       }
-      .services-grid {
+      .servicos-grid {
         grid-template-columns: 1fr;
       }
-      .about-stats {
+      .sobre-stats {
         grid-template-columns: 1fr !important;
       }
     }
@@ -527,12 +527,12 @@
 <body>
   <header>
     <div class="wrap nav">
-      <div class="logo">Dr. Nome</div>
-      <nav class="nav-links">
+      <div class="logotipo">Dr. Nome</div>
+      <nav class="links-navegacao">
         <a href="#servicos">Áreas de Atuação</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn-header" target="_blank">
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="botao-cabecalho" target="_blank">
           Agendar Consulta
         </a>
       </nav>
@@ -540,10 +540,10 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-content">
+    <section class="destaque">
+      <div class="conteiner">
+        <div class="grade-destaque">
+          <div class="conteudo-destaque">
             <h1>Justiça com <span class="highlight">Integridade</span></h1>
             <p>Advogado especializado em direito civil, trabalhista e empresarial. Mais de 10 anos de experiência defendendo seus direitos com ética, transparência e resultados comprovados.</p>
 
@@ -562,65 +562,65 @@
               </div>
             </div>
 
-            <div class="hero-cta">
-              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn-primary" target="_blank">
+            <div class="chamada-destaque">
+              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="botao-primario" target="_blank">
                 <span>Agendar Consulta</span>
                 <span>📞</span>
               </a>
-              <a href="#sobre" class="btn-secondary">
+              <a href="#sobre" class="botao-secundario">
                 <span>Saiba Mais</span>
                 <span>↓</span>
               </a>
             </div>
           </div>
 
-          <div class="hero-image">
+          <div class="imagem-destaque">
             <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Advogado em reunião" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="services">
-      <div class="wrap">
-        <div class="section-header">
+    <section id="servicos" class="servicos">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
           <h2>Áreas de Atuação</h2>
           <p>Especializado em diversas áreas do direito, oferecendo soluções jurídicas completas e personalizadas.</p>
         </div>
 
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">🏢</div>
+        <div class="grade-servicos">
+          <div class="cartao-servico">
+            <div class="icone-servico">🏢</div>
             <h3>Direito Empresarial</h3>
             <p>Assessoria jurídica completa para empresas, contratos societários, fusões e aquisições, e resolução de conflitos empresariais.</p>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">👥</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">👥</div>
             <h3>Direito Trabalhista</h3>
             <p>Defesa dos direitos trabalhistas, ações trabalhistas, acordos extrajudiciais e consultoria preventiva para empresas.</p>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🏠</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🏠</div>
             <h3>Direito Civil</h3>
             <p>Questões contratuais, responsabilidade civil, direito de família, sucessões e disputas imobiliárias.</p>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">💼</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">💼</div>
             <h3>Direito do Consumidor</h3>
             <p>Defesa dos direitos do consumidor, ações contra fornecedores e orientação em relações de consumo.</p>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">📋</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">📋</div>
             <h3>Direito Administrativo</h3>
             <p>Assessoria em licitações, contratos administrativos e defesa em processos administrativos.</p>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🔒</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🔒</div>
             <h3>Direito Digital</h3>
             <p>Proteção de dados, direito autoral na internet, contratos digitais e compliance digital.</p>
           </div>
@@ -629,7 +629,7 @@
     </section>
 
     <section id="sobre" class="about">
-      <div class="wrap">
+      <div class="conteiner">
         <div class="about-grid">
           <div class="about-content">
             <h2>Compromisso com a Justiça</h2>
@@ -660,10 +660,10 @@
     </section>
 
     <section class="cta">
-      <div class="wrap">
+      <div class="conteiner">
         <h2>Pronto para Resolver seu Caso?</h2>
         <p>Agende uma consulta inicial gratuita e vamos discutir sua situação jurídica.</p>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn-primary" target="_blank">
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="botao-primario" target="_blank">
           <span>Agendar Consulta Gratuita</span>
           <span>📞</span>
         </a>
@@ -672,7 +672,7 @@
   </main>
 
   <footer>
-    <div class="wrap">
+    <div class="conteiner">
       <p>© 2024 Dr. Nome — Advogado. Todos os direitos reservados.</p>
     </div>
   </footer>
@@ -708,7 +708,7 @@
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .about-content, .about-image').forEach(el => {
+    document.querySelectorAll('.cartao-servico, .sobre-content, .sobre-image').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

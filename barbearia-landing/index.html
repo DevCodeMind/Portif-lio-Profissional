@@ -62,7 +62,7 @@
       text-decoration: none;
     }
 
-    .wrap {
+    .conteiner {
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 1.5rem;
@@ -81,7 +81,7 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
-    .nav {
+    .navegacaoegacao {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -89,7 +89,7 @@
       gap: 1rem;
     }
 
-    .logo {
+    .logotipotipo {
       font-family: "Cinzel", serif;
       font-weight: 700;
       font-size: 1.5rem;
@@ -98,7 +98,7 @@
       text-transform: uppercase;
     }
 
-    .nav-links {
+    .links-navegacao {
       display: flex;
       align-items: center;
       gap: 2rem;
@@ -106,13 +106,13 @@
       font-weight: 500;
     }
 
-    .nav-links a:not(.btn-header) {
+    .links-navegacao a:not(.botao-cabecalho) {
       color: var(--text-muted);
       transition: var(--transition);
       position: relative;
     }
 
-    .nav-links a:not(.btn-header)::after {
+    .navegacao-links a:not(.botao-cabecalho)::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -123,15 +123,15 @@
       transition: width 0.3s ease;
     }
 
-    .nav-links a:not(.btn-header):hover::after {
+    .navegacao-links a:not(.botao-cabecalho):hover::after {
       width: 100%;
     }
 
-    .nav-links a:not(.btn-header):hover {
+    .navegacao-links a:not(.botao-cabecalho):hover {
       color: var(--accent);
     }
 
-    .btn-header {
+    .botao-cabecalho {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -147,23 +147,23 @@
       box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
     }
 
-    .btn-header:hover {
+    .botao-cabecalho:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
     }
 
     @media (max-width: 768px) {
-      .nav-links a:not(.btn-header) {
+      .links-navegacao a:not(.botao-cabecalho) {
         display: none;
       }
-      .nav {
+      .navegacaoegacao {
         padding: 1rem 0;
       }
     }
 
     /* Hero */
-    .hero {
+    .destaque {
       padding: 8rem 0 6rem;
       position: relative;
       overflow: hidden;
@@ -172,7 +172,7 @@
       align-items: center;
     }
 
-    .hero::before {
+    .destaque::before {
       content: '';
       position: absolute;
       top: 0;
@@ -183,7 +183,7 @@
       z-index: -1;
     }
 
-    .hero::after {
+    .destaque::after {
       content: '';
       position: absolute;
       top: 20%;
@@ -200,14 +200,14 @@
       50% { transform: translateY(-20px) rotate(5deg); }
     }
 
-    .hero-grid {
+    .grade-destaque {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-content h1 {
+    .conteudo-destaque h1 {
       font-family: "Cinzel", serif;
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 700;
@@ -218,13 +218,13 @@
       letter-spacing: 0.02em;
     }
 
-    .hero-content .highlight {
+    .conteudo-destaque .highlight {
       color: var(--accent);
       position: relative;
       display: inline-block;
     }
 
-    .hero-content .highlight::after {
+    .conteudo-destaque .highlight::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -235,21 +235,21 @@
       border-radius: 2px;
     }
 
-    .hero-content p {
+    .conteudo-destaque p {
       font-size: 1.2rem;
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 2rem;
     }
 
-    .hero-features {
+    .recursos-destaque {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin-bottom: 2.5rem;
     }
 
-    .feature-item {
+    .item-recurso {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -260,7 +260,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .feature-icon {
+    .icone-recurso {
       width: 40px;
       height: 40px;
       background: var(--accent-soft);
@@ -273,25 +273,25 @@
       flex-shrink: 0;
     }
 
-    .feature-text h4 {
+    .texto-recurso h4 {
       font-size: 0.9rem;
       font-weight: 600;
       color: var(--text);
       margin-bottom: 0.25rem;
     }
 
-    .feature-text p {
+    .texto-recurso p {
       font-size: 0.8rem;
       color: var(--text-muted);
     }
 
-    .hero-cta {
+    .chamada-destaque {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
+    .botao-primario {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -307,13 +307,13 @@
       box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
     }
 
-    .btn-primary:hover {
+    .botao-primario:hover {
       background: var(--accent-hover);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
     }
 
-    .btn-secondary {
+    .botao-secundario {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -329,17 +329,17 @@
       transition: var(--transition);
     }
 
-    .btn-secondary:hover {
+    .botao-secundario:hover {
       background: var(--accent);
       color: var(--bg);
       transform: translateY(-2px);
     }
 
-    .hero-image {
+    .imagem-destaque {
       position: relative;
     }
 
-    .hero-image img {
+    .imagem-destaque img {
       width: 100%;
       height: auto;
       border-radius: var(--radius);
@@ -347,7 +347,7 @@
       filter: brightness(1.1) contrast(1.1);
     }
 
-    .hero-image::before {
+    .imagem-destaque::before {
       content: '';
       position: absolute;
       top: -20px;
@@ -361,31 +361,31 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid {
+      .grade-destaque {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
       }
-      .hero-features {
+      .recursos-destaque {
         grid-template-columns: 1fr;
       }
-      .hero-cta {
+      .chamada-destaque {
         justify-content: center;
       }
     }
 
     /* Services */
-    .services {
+    .servicos {
       padding: 5rem 0;
       background: var(--bg-accent);
     }
 
-    .section-header {
+    .cabecalho-secao {
       text-align: center;
       margin-bottom: 4rem;
     }
 
-    .section-header h2 {
+    .cabecalho-secao h2 {
       font-family: "Cinzel", serif;
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 700;
@@ -395,20 +395,20 @@
       letter-spacing: 0.02em;
     }
 
-    .section-header p {
+    .cabecalho-secao p {
       font-size: 1.1rem;
       color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .services-grid {
+    .grade-servicos {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
-    .service-card {
+    .cartao-servico {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -419,7 +419,7 @@
       overflow: hidden;
     }
 
-    .service-card::before {
+    .cartao-servico::before {
       content: '';
       position: absolute;
       top: 0;
@@ -431,17 +431,17 @@
       transition: transform 0.3s ease;
     }
 
-    .service-card:hover::before {
+    .cartao-servico:hover::before {
       transform: scaleX(1);
     }
 
-    .service-card:hover {
+    .cartao-servico:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
       border-color: var(--accent);
     }
 
-    .service-icon {
+    .icone-servico {
       width: 70px;
       height: 70px;
       background: var(--accent-soft);
@@ -455,7 +455,7 @@
       position: relative;
     }
 
-    .service-icon::after {
+    .icone-servico::after {
       content: '';
       position: absolute;
       inset: -2px;
@@ -466,11 +466,11 @@
       transition: opacity 0.3s ease;
     }
 
-    .service-card:hover .service-icon::after {
+    .cartao-servico:hover .icone-servico::after {
       opacity: 0.2;
     }
 
-    .service-card h3 {
+    .cartao-servico h3 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 1rem;
@@ -479,12 +479,12 @@
       letter-spacing: 0.02em;
     }
 
-    .service-card p {
+    .cartao-servico p {
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    .service-price {
+    .preco-servico {
       margin-top: 1.5rem;
       font-size: 1.1rem;
       font-weight: 600;
@@ -492,19 +492,19 @@
     }
 
     /* About */
-    .about {
+    .sobre {
       padding: 5rem 0;
       background: var(--bg);
     }
 
-    .about-grid {
+    .sobre-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .about-content h2 {
+    .sobre-content h2 {
       font-family: "Cinzel", serif;
       font-size: 3rem;
       font-weight: 700;
@@ -514,14 +514,14 @@
       letter-spacing: 0.02em;
     }
 
-    .about-content p {
+    .sobre-content p {
       font-size: 1.1rem;
       line-height: 1.7;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
-    .about-stats {
+    .sobre-stats {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
@@ -555,12 +555,12 @@
     }
 
     @media (max-width: 900px) {
-      .about-grid {
+      .sobre-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 3rem;
       }
-      .about-stats {
+      .sobre-stats {
         grid-template-columns: 1fr;
       }
     }
@@ -605,7 +605,7 @@
       z-index: 1;
     }
 
-    .cta .btn-primary {
+    .cta .botao-primario {
       background: var(--bg);
       color: var(--accent);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
@@ -613,7 +613,7 @@
       z-index: 1;
     }
 
-    .cta .btn-primary:hover {
+    .cta .botao-primario:hover {
       background: var(--text);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
@@ -633,24 +633,24 @@
 
     /* Responsive */
     @media (max-width: 640px) {
-      .hero {
+      .destaque {
         padding: 6rem 0 4rem;
         min-height: auto;
       }
-      .services {
+      .servicos {
         padding: 3rem 0;
       }
-      .about {
+      .sobre {
         padding: 3rem 0;
       }
       .cta {
         padding: 3rem 0;
       }
-      .hero-cta {
+      .destaque-cta {
         flex-direction: column;
         align-items: center;
       }
-      .services-grid {
+      .servicos-grid {
         grid-template-columns: 1fr;
       }
       .cta h2 {
@@ -661,13 +661,13 @@
 </head>
 <body>
   <header>
-    <div class="wrap nav">
-      <div class="logo">NOME</div>
-      <nav class="nav-links">
+    <div class="conteiner navegacao">
+      <div class="logotipo">NOME</div>
+      <nav class="links-navegacao">
         <a href="#servicos">Serviços</a>
         <a href="#sobre">Sobre</a>
         <a href="#contato">Contato</a>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="btn-header" target="_blank">
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="botao-cabecalho" target="_blank">
           Agendar
         </a>
       </nav>
@@ -675,118 +675,118 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <h1>Estilo que <span class="highlight">Define</span></h1>
+    <section class="destaque">
+      <div class="conteiner">
+        <div class="grade-destaque">
+          <div class="conteudo-destaque">
+            <h1>Estilo que <span class="destaque-texto">Define</span></h1>
             <p>Barbearia tradicional com toques modernos. Cortes impecáveis, barba profissional e cuidados masculinos completos em um ambiente acolhedor.</p>
 
-            <div class="hero-features">
-              <div class="feature-item">
-                <div class="feature-icon">✂️</div>
-                <div class="feature-text">
+            <div class="recursos-destaque">
+              <div class="item-recurso">
+                <div class="icone-recurso">✂️</div>
+                <div class="texto-recurso">
                   <h4>Cortes Tradicionais</h4>
                   <p>Técnicas clássicas e modernas</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">🪒</div>
-                <div class="feature-text">
+              <div class="item-recurso">
+                <div class="icone-recurso">🪒</div>
+                <div class="texto-recurso">
                   <h4>Barba Profissional</h4>
                   <p>Modelagem e cuidados especiais</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">⏰</div>
-                <div class="feature-text">
+              <div class="item-recurso">
+                <div class="icone-recurso">⏰</div>
+                <div class="texto-recurso">
                   <h4>Agendamento Online</h4>
                   <p>Praticidade e conveniência</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">🏆</div>
-                <div class="feature-text">
+              <div class="item-recurso">
+                <div class="icone-recurso">🏆</div>
+                <div class="texto-recurso">
                   <h4>Profissionais Experientes</h4>
                   <p>Qualidade e confiança garantidas</p>
                 </div>
               </div>
             </div>
 
-            <div class="hero-cta">
-              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="btn-primary" target="_blank">
+            <div class="chamada-destaque">
+              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="botao-primario" target="_blank">
                 <span>Agendar Horário</span>
                 <span>✂️</span>
               </a>
-              <a href="#servicos" class="btn-secondary">
+              <a href="#servicos" class="botao-secundario">
                 <span>Ver Serviços</span>
                 <span>↓</span>
               </a>
             </div>
           </div>
 
-          <div class="hero-image">
+          <div class="imagem-destaque">
             <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Barbearia" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="services">
-      <div class="wrap">
-        <div class="section-header">
+    <section id="servicos" class="servicos">
+      <div class="conteiner">
+        <div class="cabecalho-secao">
           <h2>Nossos Serviços</h2>
           <p>Serviços completos de cuidados masculinos com produtos premium e técnicas profissionais para realçar seu estilo.</p>
         </div>
 
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">✂️</div>
+        <div class="grade-servicos">
+          <div class="cartao-servico">
+            <div class="icone-servico">✂️</div>
             <h3>Cortes de Cabelo</h3>
             <p>Cortes modernos e clássicos, degradê, topete, military e todos os estilos da moda com acabamento impecável.</p>
-            <div class="service-price">A partir de R$ 25</div>
+            <div class="preco-servico">A partir de R$ 25</div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🪒</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🪒</div>
             <h3>Barba Completa</h3>
             <p>Modelagem profissional da barba, aparagem, alinhamento e hidratação com produtos especializados.</p>
-            <div class="service-price">A partir de R$ 20</div>
+            <div class="preco-servico">A partir de R$ 20</div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">💇‍♂️</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">💇‍♂️</div>
             <h3>Combo Completo</h3>
             <p>Corte de cabelo + barba + limpeza de sobrancelhas + hidratação completa para um visual renovado.</p>
-            <div class="service-price">A partir de R$ 40</div>
+            <div class="preco-servico">A partir de R$ 40</div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🧴</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🧴</div>
             <h3>Tratamentos Capilares</h3>
             <p>Hidratação profunda, reconstrução capilar, tratamento anti-queda e cuidados especiais para cabelos.</p>
-            <div class="service-price">A partir de R$ 35</div>
+            <div class="preco-servico">A partir de R$ 35</div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">✨</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">✨</div>
             <h3>Limpeza de Pele</h3>
             <p>Limpeza profunda, extração de cravos, hidratação facial e cuidados para manter a pele saudável.</p>
-            <div class="service-price">A partir de R$ 30</div>
+            <div class="preco-servico">A partir de R$ 30</div>
           </div>
 
-          <div class="service-card">
-            <div class="service-icon">🎩</div>
+          <div class="cartao-servico">
+            <div class="icone-servico">🎩</div>
             <h3>Sobrancelhas</h3>
             <p>Design e modelagem das sobrancelhas masculinas com pinça ou linha para um visual harmônico.</p>
-            <div class="service-price">A partir de R$ 15</div>
+            <div class="preco-servico">A partir de R$ 15</div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="sobre" class="about">
-      <div class="wrap">
+      <div class="conteiner">
         <div class="about-grid">
           <div class="about-content">
             <h2>Tradição e Qualidade</h2>
@@ -821,10 +821,10 @@
     </section>
 
     <section class="cta">
-      <div class="wrap">
+      <div class="conteiner">
         <h2>Pronto para um Novo Visual?</h2>
         <p>Agende seu horário hoje mesmo e venha conhecer nossa barbearia. Seu novo estilo está te esperando.</p>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="btn-primary" target="_blank">
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="botao-primario" target="_blank">
           <span>Agendar Agora</span>
           <span>✨</span>
         </a>
@@ -833,7 +833,7 @@
   </main>
 
   <footer>
-    <div class="wrap">
+    <div class="conteiner">
       <p>© 2024 Nome — Barbearia. Todos os direitos reservados.</p>
     </div>
   </footer>
@@ -872,7 +872,7 @@
     }, observerOptions);
 
     // Observe elements for animation
-    document.querySelectorAll('.service-card, .about-content, .about-image').forEach(el => {
+    document.querySelectorAll('.cartao-servico, .sobre-content, .sobre-image').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

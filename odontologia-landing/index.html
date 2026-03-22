@@ -28,7 +28,7 @@
       font-size: 1rem;
     }
     a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+    .conteiner { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
 
     /* Barra superior */
     .barra-topo {
@@ -66,9 +66,9 @@
       letter-spacing: -0.03em;
     }
     .marca span { color: var(--brand); }
-    .nav-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 500; }
-    .nav-links a { color: var(--muted); }
-    .nav-links a:hover { color: var(--brand); }
+    .navegacao-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 500; }
+    .navegacao-links a { color: var(--muted); }
+    .navegacao-links a:hover { color: var(--brand); }
     .btn-cta {
       background: var(--brand);
       color: #fff !important;
@@ -79,7 +79,7 @@
     }
     .btn-cta:hover { background: var(--brand-dark); }
     @media (max-width: 700px) {
-      .nav-links { display: none; }
+      .navegacao-links { display: none; }
     }
 
     /* Hero: faixa azul + grid 3 ícones */
@@ -209,7 +209,7 @@
   <header class="cabecalho">
     <div class="wrap cabecalho-inner">
       <p class="marca">Dr. Nome <span>Sobrenome</span></p>
-      <nav class="nav-links" aria-label="Principal">
+      <nav class="links-navegacao" aria-label="Principal">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#contato">Contato</a>
@@ -220,7 +220,7 @@
 
   <main>
     <section class="faixa-hero">
-      <div class="wrap">
+      <div class="conteiner">
         <h1>Sorriso saudável com diagnóstico claro</h1>
         <p class="sub">Consultório com protocolos de biossegurança, equipamentos modernos e planos de tratamento explicados com transparência.</p>
         <div class="grid-tres">
@@ -244,7 +244,7 @@
     </section>
 
     <section id="sobre" class="secao-branca">
-      <div class="wrap">
+      <div class="conteiner">
         <p class="titulo-secao">Sobre</p>
         <h2>Consultório odontológico</h2>
         <p class="texto-muted">
@@ -268,7 +268,7 @@
     </section>
 
     <section id="servicos" class="faixa-servicos">
-      <div class="wrap">
+      <div class="conteiner">
         <p class="titulo-secao">Serviços</p>
         <h2 style="margin-bottom: 2rem;">O que oferecemos</h2>
         <ul class="lista-servicos">
