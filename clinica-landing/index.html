@@ -45,12 +45,12 @@
     }
     .faixa-navy strong { color: #fff; }
 
-    .header-principal {
+    .cabecalho-principal {
       background: var(--paper);
       border-bottom: 3px solid var(--navy);
       padding: 1.25rem 0;
     }
-    .header-principal .inner {
+    .cabecalho-principal .inner {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -94,29 +94,29 @@
     }
     .destaque-split .intro { color: var(--muted); max-width: 48ch; margin-bottom: 1.5rem; }
 
-    .card-agenda {
+    .cartao-agenda {
       background: var(--paper);
       border: 1px solid var(--line);
       border-top: 4px solid var(--navy);
       padding: 1.5rem;
       box-shadow: 0 12px 40px rgba(30, 58, 95, 0.1);
     }
-    .card-agenda h3 {
+    .cartao-agenda h3 {
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
       margin-bottom: 1rem;
     }
-    .horario-fake {
+    .horario-simulado {
       display: flex;
       justify-content: space-between;
       padding: 0.65rem 0;
       border-bottom: 1px solid var(--line);
       font-size: 0.9rem;
     }
-    .horario-fake:last-of-type { border-bottom: none; }
-    .horario-fake span:last-child { color: var(--navy); font-weight: 600; }
+    .horario-simulado:last-of-type { border-bottom: none; }
+    .horario-simulado span:last-child { color: var(--navy); font-weight: 600; }
     .btn-block {
       display: block;
       width: 100%;
@@ -222,18 +222,18 @@
   </style>
 </head>
 <body>
-  <div class="faixa-navy">
+  <div class="faixa-marinho">
     <span><strong>Clínica Nome</strong> — CNPJ 00.000.000/0001-00</span>
     <span>Central de agendamento · (11) 99999-9999</span>
   </div>
 
-  <header class="header-principal">
-    <div class="wrap inner">
+  <header class="cabecalho-principal">
+    <div class="conteiner interno">
       <div>
         <p class="titulo-clinica">Clínica Nome</p>
         <p class="sub-clinica">Consultas presenciais e telemedicina · convênios e particular</p>
       </div>
-      <nav class="nav-horizontal" aria-label="Principal">
+      <nav class="navegacao-horizontal" aria-label="Principal">
         <a href="#sobre">Institucional</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#contato">Agendar</a>
@@ -242,22 +242,22 @@
   </header>
 
   <main>
-    <div class="wrap hero-split">
+    <div class="conteiner divisao-destaque">
       <div>
         <h1>Atendimento médico com agenda clara e continuidade de cuidado</h1>
-        <p class="intro">
+        <p class="introducao">
           [Nome da clínica] reúne profissionais com formação em [áreas]. Priorizamos tempo de consulta, explicações em linguagem acessível e encaminhamentos quando necessário.
         </p>
         <p class="intro" style="margin-bottom:0;">
           <strong>Convênios:</strong> informe na mensagem qual plano utiliza para verificarmos a rede credenciada.
         </p>
       </div>
-      <aside class="card-agenda" aria-label="Exemplo de horários">
+      <aside class="cartao-agenda" aria-label="Exemplo de horários">
         <h3>Próximos horários (exemplo)</h3>
-        <div class="horario-fake"><span>Segunda</span><span>09:00 · 14:00</span></div>
-        <div class="horario-fake"><span>Quarta</span><span>08:30 · 16:30</span></div>
-        <div class="horario-fake"><span>Sexta</span><span>09:00 · 12:00</span></div>
-        <a class="btn-block" href="#contato">Solicitar horário</a>
+        <div class="horario-simulado"><span>Segunda</span><span>09:00 · 14:00</span></div>
+        <div class="horario-simulado"><span>Quarta</span><span>08:30 · 16:30</span></div>
+        <div class="horario-simulado"><span>Sexta</span><span>09:00 · 12:00</span></div>
+        <a class="botao-bloco" href="#contato">Solicitar horário</a>
       </aside>
     </div>
 
