@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<!-- Documento HTML5 em português brasileiro -->
 
 <head>
   <meta charset="UTF-8" />
+  <!-- Define codificação UTF-8 para suporte a caracteres especiais -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Configuração responsiva para dispositivos móveis -->
   <meta name="description" content="Wallef Ryan — programador iniciante. Landing pages e sites para profissionais." />
+  <!-- Descrição para SEO -->
   <title>Wallef Ryan — Portfólio</title>
+  <!-- Título da página -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
+  <!-- Carregamento otimizado das fontes Google -->
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- Arquivo CSS principal -->
 </head>
 
 <body>
+  <!-- Fundo decorativo animado -->
   <div class="fundo-pagina" aria-hidden="true"></div>
+  <!-- Grade de fundo sutil -->
   <div class="sobreposicao-grade" aria-hidden="true"></div>
 
+  <!-- Cabeçalho fixo com navegação -->
   <header>
     <div class="conteudo-central barra-navegacao">
+      <!-- Logo/nome da marca -->
       <a class="marca" href="#">Wallef Ryan <span>{ dev }</span></a>
+      <!-- Navegação principal -->
       <nav class="links-navegacao" aria-label="Principal">
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Landing pages</a>
         <a href="#contato">Contato</a>
+        <!-- Botão CTA na navegação -->
         <a class="botao-pequeno" href="#projetos">Ver trabalhos</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- Seção de abertura/hero -->
     <section class="secao-abertura">
       <div class="conteudo-central">
+        <!-- Contexto/etiqueta do profissional -->
         <p class="etiqueta-contexto">Programador iniciante · foco em presença online</p>
         <h1>
           Olá, eu sou <span class="nome-destaque">Wallef Ryan</span>
         </h1>
+        <!-- Texto introdutório principal -->
         <p class="texto-introducao">
           Crio <strong>landing pages e páginas simples</strong> para
           profissionais que querem divulgar o trabalho na internet com clareza e bom visual — sem complicação.
         </p>
+        <!-- Grupo de botões de ação -->
         <div class="grupo-botoes">
           <a class="botao-primario" href="#projetos">Ver landing pages</a>
           <a class="botao-contorno" href="#contato">Falar comigo</a>
@@ -48,12 +65,15 @@
       </div>
     </section>
 
+    <!-- Seção sobre mim -->
     <section id="sobre">
       <div class="conteudo-central">
+        <!-- Cabeçalho da seção -->
         <div class="cabecalho-secao">
           <h2>Sobre</h2>
           <p>Estou no começo da jornada em programação e aprendendo na prática, projeto a projeto.</p>
         </div>
+        <!-- Conteúdo principal da seção sobre -->
         <div class="caixa-sobre">
           <p>
             Sou o <strong>Wallef Ryan</strong>, programador iniciante. Meu foco agora é ajudar
@@ -65,6 +85,7 @@
             Cada landing que eu desenvolver vai aparecer aqui no portfólio, para você ver o estilo do trabalho antes de
             fechar comigo.
           </p>
+          <!-- Lista de tecnologias aprendidas -->
           <div class="linha-tecnologias" aria-label="Tecnologias em aprendizado">
             <span class="etiqueta-tecnologia">HTML</span>
             <span class="etiqueta-tecnologia">CSS</span>
@@ -77,30 +98,39 @@
       </div>
     </section>
 
+    <!-- Seção de projetos/landing pages -->
     <section id="projetos">
       <div class="conteudo-central">
+        <!-- Cabeçalho da seção de projetos -->
         <div class="cabecalho-secao">
           <h2>Landing pages</h2>
           <p>Clique em um card para ver as opções de demonstração daquela área.</p>
         </div>
+        <!-- Grade de cards de projetos -->
         <div class="grade-projetos">
 
+          <!-- Card para área da saúde -->
           <article class="card-projeto">
             <button type="button" class="ativador-card" data-painel="saude" aria-haspopup="dialog"
               aria-controls="painel-opcoes" aria-expanded="false">
+              <!-- Miniatura/ícone do projeto -->
               <div class="miniatura-projeto miniatura-projeto--ativo" aria-hidden="true">🌿</div>
+              <!-- Corpo do card com conteúdo -->
               <div class="corpo-projeto">
+                <!-- Rótulo/categoria do projeto -->
                 <span class="rotulo-projeto">Saúde · demo</span>
                 <h3>Landing — consultório / psicologia</h3>
                 <p>
                   Página one-page com hero, sobre, áreas de atuação e chamada para contato. Modelo para profissionais da
                   área da saúde.
                 </p>
+                <!-- Chamada para ação do card -->
                 <span class="chamada-card">Ver opções na área da saúde →</span>
               </div>
             </button>
           </article>
 
+          <!-- Card para fitness/personal trainer -->
           <article class="card-projeto">
             <button type="button" class="ativador-card" data-painel="fitness" aria-haspopup="dialog"
               aria-controls="painel-opcoes" aria-expanded="false">
@@ -116,6 +146,7 @@
             </button>
           </article>
 
+          <!-- Card para beleza -->
           <article class="card-projeto">
             <button type="button" class="ativador-card" data-painel="beleza" aria-haspopup="dialog"
               aria-controls="painel-opcoes" aria-expanded="false">
@@ -131,6 +162,7 @@
             </button>
           </article>
 
+          <!-- Card para serviços locais -->
           <article class="card-projeto">
             <button type="button" class="ativador-card" data-painel="servicos" aria-haspopup="dialog"
               aria-controls="painel-opcoes" aria-expanded="false">
@@ -146,6 +178,7 @@
             </button>
           </article>
 
+          <!-- Card placeholder para próximos projetos -->
           <article class="card-projeto card-projeto--em-breve">
             <button type="button" class="ativador-card" data-painel="proximo" aria-haspopup="dialog"
               aria-controls="painel-opcoes" aria-expanded="false">
@@ -154,6 +187,7 @@
                 <span class="rotulo-projeto">Em construção</span>
                 <h3>Próximo projeto</h3>
                 <p>Quando você publicar uma nova landing, adicione um card aqui igual ao de cima.</p>
+                <!-- Selo indicando que está em breve -->
                 <span class="selo-em-breve">// slot reservado</span>
                 <span class="chamada-card chamada-card--secundaria">Ver ideias para este slot →</span>
               </div>
@@ -162,22 +196,28 @@
 
         </div>
 
+        <!-- Comentário sobre cards removidos da página principal -->
         <!-- Pequenos cards dos projetos - removidos da página principal -->
       </div>
     </section>
 
+    <!-- Seção de contato -->
     <section id="contato">
       <div class="conteudo-central">
+        <!-- Bloco principal de contato -->
         <div class="bloco-contato">
           <h2>Quer uma landing para o seu trabalho?</h2>
           <p>Chama no WhatsApp ou manda um e-mail — respondo o quanto antes.</p>
+          <!-- Grupo de itens de contato -->
           <div class="grupo-contatos">
+            <!-- Item de contato WhatsApp -->
             <div class="item-contato">
               <span class="rotulo-contato">WhatsApp</span>
               <!-- Troque 5511999999999 pelo seu número (DDI+DDD+número, só dígitos) -->
               <a class="link-whatsapp link-com-icone"
                 href="https://wa.me/5561995510006?text=Ol%C3%A1%2C%20vim%20pelo%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
                 target="_blank" rel="noopener noreferrer">
+                <!-- Ícone do WhatsApp -->
                 <span class="icone-contato" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"
                     focusable="false">
@@ -189,9 +229,11 @@
               </a>
             </div>
 
+            <!-- Item de contato e-mail -->
             <div class="item-contato">
               <span class="rotulo-contato">E-mail</span>
               <a class="link-email link-com-icone" href="mailto:wallefryan29@gmail.com">
+                <!-- Ícone do e-mail -->
                 <span class="icone-contato icone-contato--traco" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24"
                     focusable="false" aria-hidden="true">
@@ -208,23 +250,33 @@
     </section>
   </main>
 
+  <!-- Rodapé do site -->
   <footer>
     <div class="conteudo-central">
+      <!-- Texto de copyright com ano dinâmico -->
       <p class="texto-monoespacado">© <span id="year"></span> Wallef Ryan — portfólio em construção</p>
     </div>
   </footer>
 
+  <!-- Modal/painel de opções para os cards de projeto -->
   <div class="painel-opcoes" id="painel-opcoes" hidden aria-hidden="true">
+    <!-- Fundo escuro do modal -->
     <div class="painel-opcoes__fundo" data-fechar-painel tabindex="-1"></div>
+    <!-- Caixa principal do modal -->
     <div class="painel-opcoes__caixa" role="dialog" aria-modal="true" aria-labelledby="painel-opcoes-titulo"
       aria-describedby="painel-opcoes-subtitulo">
+      <!-- Botão para fechar o modal -->
       <button type="button" class="painel-opcoes__fechar" data-fechar-painel aria-label="Fechar painel">×</button>
+      <!-- Título dinâmico do modal -->
       <h2 id="painel-opcoes-titulo" class="painel-opcoes__titulo"></h2>
+      <!-- Subtítulo dinâmico do modal -->
       <p class="painel-opcoes__subtitulo" id="painel-opcoes-subtitulo"></p>
+      <!-- Grade de cards dentro do modal -->
       <div class="painel-cards-grid" id="painel-cards-grid"></div>
     </div>
   </div>
 
+  <!-- Script principal do JavaScript -->
   <script src="js/main.js" defer></script>
 </body>
 
