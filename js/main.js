@@ -52,6 +52,7 @@ const PAINEL_DADOS = {
     subtitulo: "Páginas para personal trainers e profissionais de saúde física.",
     opcoes: [
       { label: "Personal Trainer", href: "https://DevCodeMind.github.io/Portif-lio-Profissional/projetos/personal-landing/index.html", icon: "💪" },
+      { label: "Academia Moderna", href: "https://DevCodeMind.github.io/Portif-lio-Profissional/projetos/academia-landing/index.html", icon: "🏋️" },
     ],
   },
   beleza: {
