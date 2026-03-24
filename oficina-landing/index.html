@@ -3,41 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Nome — Oficina Mecânica. Reparos automotivos de qualidade. Diagnóstico, manutenção e reparos com garantia." />
-  <title>Nome — Oficina Mecânica</title>
+  <meta name="description" content="Oficina Mecânica Nome — Reparos automotivos de qualidade. Diagnóstico completo, manutenção e reparos com garantia." />
+  <meta name="keywords" content="oficina mecânica, reparos automotivos, manutenção veicular, diagnóstico" />
+  <title>Oficina Mecânica Nome | Qualidade e Confiança</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  
   <style>
     :root {
-      --bg: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-accent: #f1f5f9;
-      --text: #1e293b;
-      --text-muted: #64748b;
-      --text-light: #94a3b8;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --accent-soft: rgba(37, 99, 235, 0.1);
-      --accent-dark: #1e40af;
-      --success: #10b981;
-      --success-soft: rgba(16, 185, 129, 0.1);
-      --warning: #f59e0b;
-      --warning-soft: rgba(245, 158, 11, 0.1);
-      --border: #e2e8f0;
-      --border-light: #f1f5f9;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 25px 80px rgba(0, 0, 0, 0.15);
-      --radius: 16px;
-      --radius-sm: 8px;
-      --max: 1200px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --cor-primaria: #0284c7;
+      --cor-primaria-escura: #0369a1;
+      --cor-destaque: #f59e0b;
+      --cor-fundo: #f8fafc;
+      --cor-fundo-claro: #e0e7ff;
+      --cor-fundo-mais-claro: #ecf0f1;
+      --cor-texto: #1e293b;
+      --cor-texto-secundaria: #334155;
+      --cor-texto-muteda: #64748b;
+      --cor-borda: #cbd5e1;
+      --cor-sucesso: #10b981;
+      --raio-borda: 12px;
+      --raio-pequeno: 8px;
+      --largura-maxima: 1200px;
+      --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --sombra: 0 20px 60px rgba(2, 132, 199, 0.1);
+      --sombra-hover: 0 25px 80px rgba(2, 132, 199, 0.15);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -45,17 +43,16 @@
     }
 
     body {
-      font-family: "Inter", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
       line-height: 1.6;
-      font-size: 1.05rem;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
     }
 
     img {
       max-width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -64,323 +61,256 @@
       text-decoration: none;
     }
 
-    .conteiner {
-      max-width: var(--max);
+    .contêiner {
+      max-width: var(--largura-maxima);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
     }
 
-    /* Header */
+    /* ========== CABEÇALHO ========== */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      z-index: 50;
+      z-index: 999;
       background: rgba(248, 250, 252, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--cor-primaria);
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
     }
 
-    .navegacao {
+    nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1.25rem 0;
-      gap: 1rem;
     }
 
-    .logotipo {
-      font-family: "Bebas Neue", sans-serif;
-      font-weight: 400;
-      font-size: 1.5rem;
-      letter-spacing: 0.1em;
-      color: var(--accent);
+    .logo {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--cor-primaria);
+      letter-spacing: 0.02em;
       text-transform: uppercase;
     }
 
-    .navegacao-links {
+    nav ul {
       display: flex;
       align-items: center;
-      gap: 2rem;
-      font-size: 0.95rem;
-      font-weight: 500;
+      list-style: none;
+      gap: 3rem;
     }
 
-    .navegacao-links a:not(.botao-cabecalho) {
-      color: var(--text-muted);
-      transition: var(--transition);
+    nav a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--cor-texto-muteda);
+      transition: var(--transicao);
       position: relative;
     }
 
-    .navegacao-links a:not(.botao-cabecalho)::after {
+    nav a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: -6px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent);
+      background: var(--cor-primaria);
       transition: width 0.3s ease;
     }
 
-    .navegacao-links a:not(.botao-cabecalho):hover::after {
+    nav a:hover {
+      color: var(--cor-primaria);
+    }
+
+    nav a:hover::after {
       width: 100%;
     }
 
-    .navegacao-links a:not(.botao-cabecalho):hover {
-      color: var(--accent);
-    }
-
-    .botao-cabecalho {
+    .botao-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: var(--bg-card) !important;
+      padding: 0.75rem 1.75rem;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+      color: white;
       border-radius: 50px;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      transition: var(--transicao);
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
     }
 
-    .botao-cabecalho:hover {
-      background: var(--accent-hover);
+    .botao-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
     }
 
     @media (max-width: 768px) {
-      .navegacao-links a:not(.botao-cabecalho) {
+      nav ul {
         display: none;
       }
-      .navegacao {
-        padding: 1rem 0;
+      .logo {
+        font-size: 1.5rem;
       }
     }
 
-    /* Hero */
-    .destaque {
-      padding: 8rem 0 6rem;
+    /* ========== HERO ========== */
+    .hero {
+      margin-top: 80px;
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--cor-fundo) 0%, var(--cor-fundo-claro) 100%);
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, var(--bg) 0%, rgba(37, 99, 235, 0.05) 100%);
     }
 
-    .destaque::before {
+    .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
-      z-index: -1;
-    }
-
-    .destaque::after {
-      content: '';
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      animation: float 8s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.15), transparent);
+      z-index: 1;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
-    }
-
-    .destaque-grid {
+    .grade-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
-    }
-
-    .destaque-content h1 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 400;
-      line-height: 0.9;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .destaque-content .highlight {
-      color: var(--accent);
       position: relative;
-      display: inline-block;
+      z-index: 2;
     }
 
-    .destaque-content .highlight::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
+    .conteudo-hero h1 {
+      font-family: 'Roboto Mono', monospace;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--cor-texto);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
 
-    .destaque-content p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
+    .destaques {
+      color: var(--cor-primaria);
     }
 
-    .destaque-features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .conteudo-hero p {
+      font-size: 1.1rem;
+      color: var(--cor-texto-muteda);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .distintivos {
+      display: flex;
+      flex-wrap: wrap;
       gap: 1.5rem;
       margin-bottom: 2.5rem;
     }
 
-    .item-recurso {
+    .distintivo {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .icone-recurso {
-      width: 40px;
-      height: 40px;
-      background: var(--accent-soft);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .texto-recurso h4 {
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(2, 132, 199, 0.1);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      border-radius: 50px;
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.25rem;
     }
 
-    .texto-recurso p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .destaque-cta {
+    .botoes-hero {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
 
     .botao-primario {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
-      background: var(--accent);
-      color: var(--bg-card);
+      gap: 0.75rem;
+      padding: 1.25rem 2rem;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+      color: white;
       border-radius: 50px;
       font-weight: 700;
       font-size: 1rem;
+      transition: var(--transicao);
+      box-shadow: var(--sombra);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: var(--transition);
-      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
     }
 
     .botao-primario:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+      transform: translateY(-3px);
+      box-shadow: var(--sombra-hover);
     }
 
     .botao-secundario {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
+      gap: 0.75rem;
+      padding: 1.25rem 2rem;
       background: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
+      color: var(--cor-primaria);
+      border: 2px solid var(--cor-primaria);
       border-radius: 50px;
       font-weight: 700;
       font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: var(--transition);
+      transition: var(--transicao);
     }
 
     .botao-secundario:hover {
-      background: var(--accent);
-      color: var(--bg-card);
-      transform: translateY(-2px);
+      background: var(--cor-primaria);
+      color: white;
+      transform: translateY(-3px);
     }
 
-    .destaque-image {
+    .imagem-hero {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .destaque-image img {
+    .imagem-hero img {
       width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      filter: brightness(1.05) contrast(1.05);
+      border-radius: var(--raio-borda);
+      box-shadow: var(--sombra);
+      animation: flutuacao 3s ease-in-out infinite;
     }
 
-    .destaque-image::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      right: 20px;
-      bottom: 20px;
-      background: linear-gradient(45deg, var(--accent), var(--accent-hover));
-      border-radius: var(--radius);
-      z-index: -1;
-      opacity: 0.1;
+    @keyframes flutuacao {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
     }
 
     @media (max-width: 900px) {
-      .destaque-grid {
+      .grade-hero {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 3rem;
       }
-      .destaque-features {
-        grid-template-columns: 1fr;
+      .conteudo-hero h1 {
+        font-size: 2rem;
       }
-      .destaque-cta {
+      .botoes-hero {
         justify-content: center;
       }
     }
 
-    /* Services */
-    .servicos {
-      padding: 5rem 0;
-      background: var(--bg-accent);
+    /* ========== SERVIÇOS ========== */
+    .secao-servicos {
+      padding: 6rem 0;
+      background: white;
     }
 
     .cabecalho-secao {
@@ -389,35 +319,33 @@
     }
 
     .cabecalho-secao h2 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      font-weight: 400;
+      font-family: 'Roboto Mono', monospace;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
       margin-bottom: 1rem;
-      color: var(--text);
+      color: var(--cor-texto);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     .cabecalho-secao p {
       font-size: 1.1rem;
-      color: var(--text-muted);
+      color: var(--cor-texto-muteda);
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .servicos-grid {
+    .grade-servicos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
     .cartao-servico {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      background: var(--cor-fundo-mais-claro);
+      border: 2px solid var(--cor-borda);
+      border-radius: var(--raio-borda);
       padding: 2.5rem;
-      transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: var(--transicao);
       position: relative;
       overflow: hidden;
     }
@@ -428,518 +356,407 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
-    .cartao-servico:hover::before {
-      transform: scaleX(1);
+      height: 5px;
+      background: linear-gradient(90deg, var(--cor-primaria), var(--cor-destaque));
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
     }
 
     .cartao-servico:hover {
       transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent);
+      border-color: var(--cor-primaria);
+      box-shadow: 0 10px 30px rgba(2, 132, 199, 0.2);
+    }
+
+    .cartao-servico:hover::before {
+      transform: translateX(0);
     }
 
     .icone-servico {
-      width: 70px;
-      height: 70px;
-      background: var(--accent-soft);
-      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      background: rgba(2, 132, 199, 0.1);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
       font-size: 1.8rem;
-      color: var(--accent);
-      position: relative;
+      margin-bottom: 1.5rem;
+      transition: var(--transicao);
     }
 
-    .icone-servico::after {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, var(--accent), var(--accent-hover));
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .cartao-servico:hover .icone-servico::after {
-      opacity: 0.2;
+    .cartao-servico:hover .icone-servico {
+      background: rgba(2, 132, 199, 0.2);
+      transform: scale(1.1) rotate(-5deg);
     }
 
     .cartao-servico h3 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      color: var(--text);
+      color: var(--cor-texto);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
     }
 
     .cartao-servico p {
-      color: var(--text-muted);
-      line-height: 1.6;
+      color: var(--cor-texto-muteda);
+      line-height: 1.7;
     }
 
-    .service-features {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+    /* ========== SOBRE ========== */
+    .secao-sobre {
+      padding: 6rem 0;
+      background: var(--cor-fundo-claro);
     }
 
-    .service-feature {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .service-feature::before {
-      content: '✓';
-      color: var(--success);
-      font-weight: bold;
-    }
-
-    /* About */
-    .sobre {
-      padding: 5rem 0;
-      background: var(--bg);
-    }
-
-    .sobre-grid {
+    .grade-sobre {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
     }
 
-    .sobre-content h2 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 3rem;
-      font-weight: 400;
+    .conteudo-sobre h2 {
+      font-family: 'Roboto Mono', monospace;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
       margin-bottom: 1.5rem;
-      color: var(--text);
+      color: var(--cor-texto);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
-    .sobre-content p {
+    .conteudo-sobre p {
       font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--text-muted);
+      color: var(--cor-texto-muteda);
       margin-bottom: 1.5rem;
+      line-height: 1.8;
     }
 
-    .sobre-features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
+    .imagem-sobre {
+      position: relative;
     }
 
-    .sobre-feature {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: var(--bg-card);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .sobre-feature-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--accent-soft);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .sobre-feature-text {
-      font-weight: 600;
-      color: var(--text);
-      font-size: 0.9rem;
+    .imagem-sobre img {
+      width: 100%;
+      border-radius: var(--raio-borda);
+      box-shadow: var(--sombra);
     }
 
     @media (max-width: 900px) {
-      .sobre-grid {
+      .grade-sobre {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 3rem;
-      }
-      .sobre-features {
-        grid-template-columns: 1fr;
       }
     }
 
-    /* CTA */
-    .cta {
-      padding: 5rem 0;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-      color: var(--bg-card);
+    /* ========== CTA ========== */
+    .secao-cta {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .cta::before {
+    .secao-cta::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
       right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="gear" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="3" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="10" cy="10" r="6" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23gear)"/></svg>');
-      opacity: 0.1;
-    }
-
-    .cta h2 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 3.5rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      position: relative;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
       z-index: 1;
     }
 
-    .cta p {
+    .secao-cta > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .secao-cta h2 {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .secao-cta p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      opacity: 0.9;
-      position: relative;
-      z-index: 1;
+      color: rgba(255, 255, 255, 0.9);
     }
 
-    .cta .botao-primario {
-      background: var(--bg-card);
-      color: var(--accent);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      position: relative;
-      z-index: 1;
+    .secao-cta .botao-primario {
+      background: white;
+      color: var(--cor-primaria);
+      font-weight: 700;
     }
 
-    .cta .botao-primario:hover {
-      background: var(--text);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    .secao-cta .botao-primario:hover {
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    /* Footer */
+    /* ========== RODAPÉ ========== */
     footer {
-      padding: 3rem 0;
-      background: var(--bg-card);
-      color: var(--text);
+      background: var(--cor-texto-secundaria);
+      color: white;
+      padding: 4rem 0;
+      border-top: 2px solid var(--cor-primaria);
+    }
+
+    .rodape-conteudo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .coluna-rodape h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--cor-destaque);
+      text-transform: uppercase;
+    }
+
+    .coluna-rodape ul {
+      list-style: none;
+    }
+
+    .coluna-rodape a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: block;
+      transition: var(--transicao);
+    }
+
+    .coluna-rodape a:hover {
+      color: var(--cor-destaque);
+      transform: translateX(4px);
+    }
+
+    .coluna-rodape p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .rodape-inferior {
       text-align: center;
-      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
     }
 
-    footer p {
-      opacity: 0.7;
+    .animacao-entrada {
+      animation: entrada 0.6s ease-out forwards;
+      opacity: 0;
     }
 
-    /* Responsive */
-    @media (max-width: 640px) {
-      .destaque {
-        padding: 6rem 0 4rem;
-        min-height: auto;
+    @keyframes entrada {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      .servicos {
-        padding: 3rem 0;
-      }
-      .sobre {
-        padding: 3rem 0;
-      }
-      .cta {
-        padding: 3rem 0;
-      }
-      .destaque-cta {
-        flex-direction: column;
-        align-items: center;
-      }
-      .servicos-grid {
-        grid-template-columns: 1fr;
-      }
-      .cta h2 {
-        font-size: 2.5rem;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="conteiner navegacao">
-      <div class="logotipo">NOME</div>
-      <nav class="links-navegacao">
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="botao-cabecalho" target="_blank">
-          Orçamento
-        </a>
+    <div class="contêiner">
+      <nav>
+        <div class="logo">⚙️ Oficina Mecânica</div>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://wa.me/5561995510006?text=Olá,%20gostaria%20de%20levar%20meu%20veículo%20para%20manutenção." target="_blank" rel="noopener noreferrer" class="botao-cta">Agendar Visita</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="destaque">
-      <div class="conteiner">
-        <div class="grade-destaque">
-          <div class="conteudo-destaque">
-            <h1>Seu Carro em <span class="highlight">Boas Mãos</span></h1>
-            <p>Oficina mecânica completa com profissionais especializados. Diagnóstico preciso, reparos de qualidade e garantia em todos os serviços.</p>
+    <section class="hero">
+      <div class="contêiner">
+        <div class="grade-hero">
+          <div class="conteudo-hero">
+            <h1>Reparos <span class="destaques">Automotivos</span> de <span class="destaques">Qualidade</span></h1>
+            <p>Oficina especializada com diagnóstico completo, manutenção preventiva e reparos com garantia. Profissionais experientes e equipamentos modernos.</p>
 
-            <div class="recursos-destaque">
-              <div class="item-recurso">
-                <div class="icone-recurso">🔧</div>
-                <div class="texto-recurso">
-                  <h4>Diagnóstico Digital</h4>
-                  <p>Equipamentos modernos e precisos</p>
-                </div>
-              </div>
-              <div class="item-recurso">
-                <div class="icone-recurso">🛡️</div>
-                <div class="texto-recurso">
-                  <h4>Garantia Total</h4>
-                  <p>Em todos os serviços realizados</p>
-                </div>
-              </div>
-              <div class="item-recurso">
-                <div class="icone-recurso">⏰</div>
-                <div class="texto-recurso">
-                  <h4>Agilidade</h4>
-                  <p>Serviço rápido sem perder qualidade</p>
-                </div>
-              </div>
-              <div class="item-recurso">
-                <div class="icone-recurso">💰</div>
-                <div class="texto-recurso">
-                  <h4>Preços Justos</h4>
-                  <p>Transparência e melhor custo-benefício</p>
-                </div>
-              </div>
+            <div class="distintivos">
+              <div class="distintivo"><span>🔧</span> <span>Profissionais</span></div>
+              <div class="distintivo"><span>📱</span> <span>Diagnóstico Digital</span></div>
+              <div class="distintivo"><span>✅</span> <span>Garantia</span></div>
             </div>
 
-            <div class="chamada-destaque">
-              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="botao-primario" target="_blank">
-                <span>Peça Orçamento</span>
-                <span>🔧</span>
+            <div class="botoes-hero">
+              <a href="https://wa.me/5561995510006?text=Olá,%20gostaria%20de%20levar%20meu%20veículo%20para%20manutenção." target="_blank" rel="noopener noreferrer" class="botao-primario">
+                📞 Agendar Agora
               </a>
-              <a href="#servicos" class="botao-secundario">
-                <span>Ver Serviços</span>
-                <span>↓</span>
-              </a>
+              <a href="#sobre" class="botao-secundario">Saiba Mais →</a>
             </div>
           </div>
 
-          <div class="imagem-destaque">
-            <img src="https://images.unsplash.com/photo-1632823471565-1ec60b2f9ea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Oficina Mecânica" />
+          <div class="imagem-hero">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%230EA5E9' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EOficina Mecânica%3C/text%3E%3C/svg%3E" alt="Oficina Mecânica" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="servicos">
-      <div class="conteiner">
+    <section id="servicos" class="secao-servicos">
+      <div class="contêiner">
         <div class="cabecalho-secao">
           <h2>Nossos Serviços</h2>
-          <p>Serviços completos de manutenção e reparo automotivo com equipamentos modernos e profissionais qualificados.</p>
+          <p>Oferecemos uma ampla gama de serviços automotivos com qualidade garantida.</p>
         </div>
 
         <div class="grade-servicos">
           <div class="cartao-servico">
             <div class="icone-servico">🔍</div>
-            <h3>Diagnóstico Eletrônico</h3>
-            <p>Diagnóstico completo do sistema eletrônico do veículo usando equipamentos de última geração para identificar problemas com precisão.</p>
-            <div class="service-features">
-              <div class="service-feature">Scanner digital avançado</div>
-              <div class="service-feature">Leitura de códigos de erro</div>
-              <div class="service-feature">Teste de componentes</div>
-            </div>
+            <h3>Diagnóstico Completo</h3>
+            <p>Diagnóstico digital com equipamento de ponta para identificar qualquer problema.</p>
+          </div>
+
+          <div class="cartao-servico">
+            <div class="icone-servico">🛢️</div>
+            <h3>Manutenção preventiva</h3>
+            <p>Troca de óleo, filtros, velas e outros componentes para manter seu veículo funcionando.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">⚙️</div>
-            <h3>Manutenção Preventiva</h3>
-            <p>Troca de óleo, filtros, velas, correias e todos os itens necessários para manter seu veículo em perfeitas condições.</p>
-            <div class="service-features">
-              <div class="service-feature">Troca de óleo e filtros</div>
-              <div class="service-feature">Revisão completa</div>
-              <div class="service-feature">Alinhamento e balanceamento</div>
-            </div>
+            <h3>Reparos Gerais</h3>
+            <p>Conserto de motor, câmbio, suspensão e sistema elétrico com garantia.</p>
           </div>
 
           <div class="cartao-servico">
-            <div class="icone-servico">🔧</div>
-            <h3>Reparos Mecânicos</h3>
-            <p>Reparo de motor, suspensão, freios, transmissão e todos os sistemas mecânicos do veículo com peças de qualidade.</p>
-            <div class="service-features">
-              <div class="service-feature">Reparo de motor</div>
-              <div class="service-feature">Sistema de freios</div>
-              <div class="service-feature">Suspensão e direção</div>
-            </div>
+            <div class="icone-servico">🔩</div>
+            <h3>Alinhamento e Balanceamento</h3>
+            <p>Alinhamento de direção e balanceamento de pneus com precisão.</p>
           </div>
 
           <div class="cartao-servico">
-            <div class="icone-servico">🔋</div>
-            <h3>Sistema Elétrico</h3>
-            <p>Reparo e manutenção de bateria, alternador, motor de partida, fiação elétrica e todos os componentes elétricos.</p>
-            <div class="service-features">
-              <div class="service-feature">Bateria e alternador</div>
-              <div class="service-feature">Sistema de ignição</div>
-              <div class="service-feature">Iluminação e acessórios</div>
-            </div>
-          </div>
-
-          <div class="cartao-servico">
-            <div class="icone-servico">🛠️</div>
-            <h3>Funilaria e Pintura</h3>
-            <p>Reparo de lataria, pintura automotiva profissional e restauração completa da carroceria do veículo.</p>
-            <div class="service-features">
-              <div class="service-feature">Reparo de lataria</div>
-              <div class="service-feature">Pintura automotiva</div>
-              <div class="service-feature">Polimento e restauração</div>
-            </div>
+            <div class="icone-servico">🛞</div>
+            <h3>Pneus e Rodas</h3>
+            <p>Venda e instalação de pneus e rodas de qualidade para sua segurança.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">🚗</div>
-            <h3>Inspeção Veicular</h3>
-            <p>Inspeção completa do veículo para detectar problemas ocultos e garantir segurança e conformidade com as normas.</p>
-            <div class="service-features">
-              <div class="service-feature">Segurança veicular</div>
-              <div class="service-feature">Emissões e poluentes</div>
-              <div class="service-feature">Laudo técnico completo</div>
-            </div>
+            <h3>Revisão Completa</h3>
+            <p>Inspeção de segurança completa e revisão de toda a mecânica do veículo.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="sobre" class="about">
-      <div class="conteiner">
-        <div class="about-grid">
-          <div class="about-content">
-            <h2>Experiência que Conta</h2>
-            <p>Há mais de 15 anos no mercado, nossa oficina se destaca pela qualidade dos serviços prestados e pela confiança conquistada junto aos nossos clientes. Somos especializados em todas as marcas e modelos de veículos.</p>
-            <p>Contamos com uma equipe de mecânicos qualificados, equipamentos modernos e um compromisso inabalável com a satisfação do cliente. Seu carro merece o melhor cuidado.</p>
-
-            <div class="about-features">
-              <div class="about-feature">
-                <div class="about-feature-icon">🏆</div>
-                <div class="about-feature-text">15 anos de experiência</div>
-              </div>
-              <div class="about-feature">
-                <div class="about-feature-icon">👥</div>
-                <div class="about-feature-text">Equipe especializada</div>
-              </div>
-              <div class="about-feature">
-                <div class="about-feature-icon">🔧</div>
-                <div class="about-feature-text">Equipamentos modernos</div>
-              </div>
-              <div class="about-feature">
-                <div class="about-feature-icon">⭐</div>
-                <div class="about-feature-text">Excelente avaliação</div>
-              </div>
-            </div>
+    <section id="sobre" class="secao-sobre">
+      <div class="contêiner">
+        <div class="grade-sobre">
+          <div class="conteudo-sobre">
+            <h2>Sobre Nossa Oficina</h2>
+            <p>Com mais de 10 anos de experiência, nossa oficina se consolidou como referência em reparos automotivos confiáveis e de qualidade.</p>
+            <p>Nossos mecânicos são profissionais qualificados e certificados, sempre atualizados com as últimas tecnologias automotivas. Utilizamos equipamentos modernos e peças originais.</p>
+            <p>Estamos comprometidos em oferecer o melhor serviço com preços justos e transparência total.</p>
           </div>
 
-          <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1632823471565-1ec60b2f9ea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Equipe da Oficina" />
+          <div class="imagem-sobre">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23EA580C' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EInterior da Oficina%3C/text%3E%3C/svg%3E" alt="Interior da Oficina" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="conteiner">
-        <h2>Seu Carro Merece o Melhor</h2>
-        <p>Solicite seu orçamento agora mesmo e tenha seu veículo cuidado por profissionais que entendem do assunto.</p>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20orçamento." class="botao-primario" target="_blank">
-          <span>Solicitar Orçamento</span>
-          <span>🚀</span>
+    <section class="secao-cta" id="contato">
+      <div class="contêiner">
+        <h2>Seu Veículo Merece o Melhor</h2>
+        <p>Agende uma visita e deixe seu carro nas mãos de profissionais!</p>
+        <a href="https://wa.me/5561995510006?text=Olá,%20gostaria%20de%20levar%20meu%20veículo%20para%20manutenção." target="_blank" rel="noopener noreferrer" class="botao-primario">
+          📞 Agendar Manutenção
         </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="conteiner">
-      <p>© 2024 Nome — Oficina Mecânica. Todos os direitos reservados.</p>
+    <div class="contêiner">
+      <div class="rodape-conteudo">
+        <div class="coluna-rodape">
+          <h3>Sobre</h3>
+          <p>Oficina mecânica de confiança com foco em qualidade e satisfação do cliente.</p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Serviços</h3>
+          <ul>
+            <li><a href="#servicos">Diagnóstico Digital</a></li>
+            <li><a href="#servicos">Manutenção</a></li>
+            <li><a href="#servicos">Reparos Gerais</a></li>
+            <li><a href="#servicos">Alinhamento</a></li>
+          </ul>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="tel:+5561995510006">📞 (61) 99551-0006</a></li>
+            <li><a href="mailto:contato@example.com">📧 contato@example.com</a></li>
+            <li><a href="#">📍 Brasília, DF</a></li>
+          </ul>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Horário</h3>
+          <ul>
+            <li>Segunda a Sexta: 08:00 - 18:00</li>
+            <li>Sábado: 08:00 -13:00</li>
+            <li>Domingo: Fechado</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape-inferior">
+        <p>&copy; 2024 Oficina Mecânica Nome. Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // Add intersection observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        } else {
-          entry.target.style.opacity = '0';
-          entry.target.style.transform = 'translateY(30px)';
+    const opcoes = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('animacao-entrada');
+          observador.unobserve(entrada.target);
         }
       });
-    }, observerOptions);
+    }, opcoes);
 
-    // Observe elements for animation
-    document.querySelectorAll('.cartao-servico, .sobre-content, .sobre-image').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-
-    // Add scroll effect to header
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        // Scrolling up
-        header.style.transform = 'translateY(0)';
-      }
-
-      lastScrollTop = scrollTop;
+    document.querySelectorAll('.cartao-servico, .conteudo-sobre, .imagem-sobre').forEach(elemento => {
+      observador.observe(elemento);
     });
   </script>
 </body>

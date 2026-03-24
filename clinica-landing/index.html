@@ -29,7 +29,7 @@
     }
     a { color: var(--navy-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .conteiner { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
 
     /* Faixa institucional */
     .faixa-navy {
@@ -45,12 +45,12 @@
     }
     .faixa-navy strong { color: #fff; }
 
-    .cabecalho-principal {
+    .header-principal {
       background: var(--paper);
       border-bottom: 3px solid var(--navy);
       padding: 1.25rem 0;
     }
-    .cabecalho-principal .inner {
+    .header-principal .inner {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -64,17 +64,17 @@
       color: var(--navy);
     }
     .sub-clinica { font-size: 0.88rem; color: var(--muted); margin-top: 0.25rem; }
-    .navegacao-horizontal {
+    .nav-horizontal {
       display: flex;
       gap: 1.5rem;
       font-size: 0.9rem;
       font-weight: 600;
     }
-    .navegacao-horizontal a { color: var(--navy); }
-    .navegacao-horizontal a:hover { color: var(--navy-light); text-decoration: none; border-bottom: 2px solid var(--navy); }
+    .nav-horizontal a { color: var(--navy); }
+    .nav-horizontal a:hover { color: var(--navy-light); text-decoration: none; border-bottom: 2px solid var(--navy); }
 
     /* Hero em duas colunas: texto | card agenda */
-    .destaque-split {
+    .hero-split {
       display: grid;
       grid-template-columns: 1fr 340px;
       gap: 2.5rem;
@@ -82,9 +82,9 @@
       padding: 3rem 0 4rem;
     }
     @media (max-width: 900px) {
-      .destaque-split { grid-template-columns: 1fr; }
+      .hero-split { grid-template-columns: 1fr; }
     }
-    .destaque-split h1 {
+    .hero-split h1 {
       font-family: "Source Serif 4", Georgia, serif;
       font-size: clamp(1.75rem, 3.5vw, 2.35rem);
       font-weight: 700;
@@ -92,31 +92,31 @@
       line-height: 1.2;
       margin-bottom: 1rem;
     }
-    .destaque-split .intro { color: var(--muted); max-width: 48ch; margin-bottom: 1.5rem; }
+    .hero-split .intro { color: var(--muted); max-width: 48ch; margin-bottom: 1.5rem; }
 
-    .cartao-agenda {
+    .card-agenda {
       background: var(--paper);
       border: 1px solid var(--line);
       border-top: 4px solid var(--navy);
       padding: 1.5rem;
       box-shadow: 0 12px 40px rgba(30, 58, 95, 0.1);
     }
-    .cartao-agenda h3 {
+    .card-agenda h3 {
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
       margin-bottom: 1rem;
     }
-    .horario-simulado {
+    .horario-fake {
       display: flex;
       justify-content: space-between;
       padding: 0.65rem 0;
       border-bottom: 1px solid var(--line);
       font-size: 0.9rem;
     }
-    .horario-simulado:last-of-type { border-bottom: none; }
-    .horario-simulado span:last-child { color: var(--navy); font-weight: 600; }
+    .horario-fake:last-of-type { border-bottom: none; }
+    .horario-fake span:last-child { color: var(--navy); font-weight: 600; }
     .btn-block {
       display: block;
       width: 100%;
@@ -171,7 +171,7 @@
       color: var(--navy);
       margin-bottom: 1rem;
     }
-    .secao-texto > .conteiner > p { color: var(--muted); max-width: 65ch; margin-bottom: 1.5rem; }
+    .secao-texto > .wrap > p { color: var(--muted); max-width: 65ch; margin-bottom: 1.5rem; }
 
     .tabela-especialidades {
       width: 100%;
@@ -222,18 +222,18 @@
   </style>
 </head>
 <body>
-  <div class="faixa-marinho">
+  <div class="faixa-navy">
     <span><strong>Clínica Nome</strong> — CNPJ 00.000.000/0001-00</span>
     <span>Central de agendamento · (11) 99999-9999</span>
   </div>
 
-  <header class="cabecalho-principal">
-    <div class="conteiner interno">
+  <header class="header-principal">
+    <div class="wrap inner">
       <div>
         <p class="titulo-clinica">Clínica Nome</p>
         <p class="sub-clinica">Consultas presenciais e telemedicina · convênios e particular</p>
       </div>
-      <nav class="navegacao-horizontal" aria-label="Principal">
+      <nav class="nav-horizontal" aria-label="Principal">
         <a href="#sobre">Institucional</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#contato">Agendar</a>
@@ -242,27 +242,27 @@
   </header>
 
   <main>
-    <div class="conteiner divisao-destaque">
+    <div class="wrap hero-split">
       <div>
         <h1>Atendimento médico com agenda clara e continuidade de cuidado</h1>
-        <p class="introducao">
+        <p class="intro">
           [Nome da clínica] reúne profissionais com formação em [áreas]. Priorizamos tempo de consulta, explicações em linguagem acessível e encaminhamentos quando necessário.
         </p>
         <p class="intro" style="margin-bottom:0;">
           <strong>Convênios:</strong> informe na mensagem qual plano utiliza para verificarmos a rede credenciada.
         </p>
       </div>
-      <aside class="cartao-agenda" aria-label="Exemplo de horários">
+      <aside class="card-agenda" aria-label="Exemplo de horários">
         <h3>Próximos horários (exemplo)</h3>
-        <div class="horario-simulado"><span>Segunda</span><span>09:00 · 14:00</span></div>
-        <div class="horario-simulado"><span>Quarta</span><span>08:30 · 16:30</span></div>
-        <div class="horario-simulado"><span>Sexta</span><span>09:00 · 12:00</span></div>
-        <a class="botao-bloco" href="#contato">Solicitar horário</a>
+        <div class="horario-fake"><span>Segunda</span><span>09:00 · 14:00</span></div>
+        <div class="horario-fake"><span>Quarta</span><span>08:30 · 16:30</span></div>
+        <div class="horario-fake"><span>Sexta</span><span>09:00 · 12:00</span></div>
+        <a class="btn-block" href="#contato">Solicitar horário</a>
       </aside>
     </div>
 
     <div class="passos">
-      <div class="conteiner" style="display:contents">
+      <div class="wrap" style="display:contents">
         <div class="passo">
           <div class="num">1</div>
           <strong>Envie sua solicitação</strong>
@@ -282,7 +282,7 @@
     </div>
 
     <section id="sobre" class="secao-texto">
-      <div class="conteiner">
+      <div class="wrap">
         <h2>Sobre a clínica</h2>
         <p>
           Equipe com CRM ativo e salas preparadas para o conforto do paciente. Mantemos histórico seguro e sigiloso, com possibilidade de retorno e leitura de exames no mesmo local quando aplicável.
@@ -291,7 +291,7 @@
     </section>
 
     <section id="especialidades" class="secao-texto" style="background:var(--paper);padding-top:2.5rem;padding-bottom:2.5rem;">
-      <div class="conteiner">
+      <div class="wrap">
         <h2>Especialidades (exemplos)</h2>
         <p>Confirme disponibilidade por especialidade ao agendar.</p>
         <table class="tabela-especialidades">

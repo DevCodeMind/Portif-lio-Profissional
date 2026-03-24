@@ -3,37 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dr. Nome — Advogado especializado. Justiça, ética e resultados. Agende sua consulta." />
-  <title>Dr. Nome — Advogado</title>
+  <meta name="description" content="Dr. Nome — Advogado especializado em direito civil, trabalhista e empresarial. Mais de 10 anos de experiência defendendo seus direitos com ética e resultados." />
+  <meta name="keywords" content="advogado, direito civil, direito trabalhista, direito empresarial, consulta jurídica" />
+  <title>Dr. Nome — Advogado Especializado | Brasília</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  
   <style>
     :root {
-      --bg: #fafafa;
-      --bg-card: #ffffff;
-      --bg-accent: #f8f9fa;
-      --text: #1a1a1a;
-      --text-muted: #6b7280;
-      --text-light: #9ca3af;
-      --accent: #1e40af;
-      --accent-hover: #1d4ed8;
-      --accent-soft: #eff6ff;
-      --accent-dark: #1e3a8a;
-      --border: #e5e7eb;
-      --border-light: #f3f4f6;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 25px 80px rgba(0, 0, 0, 0.12);
-      --radius: 16px;
-      --radius-sm: 8px;
-      --max: 1200px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --cor-primaria: #1e40af;
+      --cor-primaria-escura: #1d4ed8;
+      --cor-secundaria: #0ea5e9;
+      --cor-fundo: #0f172a;
+      --cor-fundo-claro: #1e293b;
+      --cor-fundo-mais-claro: #334155;
+      --cor-texto: #ffffff;
+      --cor-texto-secundaria: #cbd5e1;
+      --cor-texto-muteda: #94a3b8;
+      --cor-borda: #475569;
+      --raio-borda: 12px;
+      --raio-pequeno: 8px;
+      --largura-maxima: 1200px;
+      --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --sombra: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --sombra-hover: 0 25px 80px rgba(0, 0, 0, 0.5);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -41,16 +42,17 @@
     }
 
     body {
-      font-family: "Inter", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
       line-height: 1.6;
-      font-size: 1.05rem;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     img {
       max-width: 100%;
+      height: auto;
       display: block;
     }
 
@@ -59,264 +61,259 @@
       text-decoration: none;
     }
 
-    .conteiner {
-      max-width: var(--max);
+    .contêiner {
+      max-width: var(--largura-maxima);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 2rem;
     }
 
-    /* Header */
+    /* ========== CABEÇALHO ========== */
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 50;
-      background: rgba(250, 250, 250, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border-light);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cor-borda);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    .navegacao {
+    nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1.25rem 0;
-      gap: 1rem;
     }
 
-    .logotipo {
-      font-family: "Playfair Display", Georgia, serif;
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
       font-weight: 700;
-      font-size: 1.25rem;
+      color: var(--cor-primaria);
       letter-spacing: -0.02em;
-      color: var(--accent);
     }
 
-    .navegacao-links {
+    nav ul {
       display: flex;
       align-items: center;
-      gap: 2rem;
-      font-size: 0.95rem;
-      font-weight: 500;
+      list-style: none;
+      gap: 3rem;
     }
 
-    .navegacao-links a:not(.botao-cabecalho) {
-      color: var(--text-muted);
-      transition: var(--transition);
+    nav a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--cor-texto-muteda);
+      transition: var(--transicao);
       position: relative;
     }
 
-    .navegacao-links a:not(.botao-cabecalho)::after {
+    nav a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: -6px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--accent);
+      background: var(--cor-primaria);
       transition: width 0.3s ease;
     }
 
-    .navegacao-links a:not(.botao-cabecalho):hover::after {
+    nav a:hover {
+      color: var(--cor-primaria);
+    }
+
+    nav a:hover::after {
       width: 100%;
     }
 
-    .navegacao-links a:not(.botao-cabecalho):hover {
-      color: var(--accent);
-    }
-
-    .botao-cabecalho {
+    .botao-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: white !important;
+      padding: 0.75rem 1.75rem;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+      color: white;
       border-radius: 50px;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: var(--transition);
-      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+      transition: var(--transicao);
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
     }
 
-    .botao-cabecalho:hover {
-      background: var(--accent-hover);
+    .botao-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.6);
     }
 
     @media (max-width: 768px) {
-      .navegacao-links a:not(.botao-cabecalho) {
+      nav ul {
         display: none;
       }
-      .navegacao {
-        padding: 1rem 0;
+      .logo {
+        font-size: 1.5rem;
       }
     }
 
-    /* Hero */
-    .destaque {
-      padding: 5rem 0 6rem;
+    /* ========== HERO ========== */
+    .hero {
+      margin-top: 80px;
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--cor-fundo) 0%, var(--cor-fundo-claro) 100%);
       position: relative;
       overflow: hidden;
     }
 
-    .destaque::before {
+    .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
       border-radius: 50%;
-      transform: translate(30%, -30%);
-      z-index: -1;
+      background: radial-gradient(circle, rgba(30, 64, 175, 0.2), transparent);
+      z-index: 1;
     }
 
-    .destaque-grid {
+    .grade-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
-    }
-
-    .destaque-content h1 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--text);
-    }
-
-    .destaque-content .highlight {
-      color: var(--accent);
       position: relative;
+      z-index: 2;
     }
 
-    .destaque-content .highlight::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-      border-radius: 2px;
+    .conteudo-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--cor-texto), var(--cor-texto-secundaria));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .destaque-content p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
+    .destaques {
+      color: var(--cor-primaria);
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .destaque-badges {
+    .conteudo-hero p {
+      font-size: 1.1rem;
+      color: var(--cor-texto-muteda);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .distintivos {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.5rem;
       margin-bottom: 2.5rem;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border: 1px solid rgba(30, 64, 175, 0.2);
-    }
-
-    .icone-distintivo {
-      font-size: 1rem;
-    }
-
-    .destaque-cta {
+    .distintivo {
       display: flex;
-      gap: 1rem;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      background: rgba(30, 64, 175, 0.15);
+      border: 1px solid rgba(30, 64, 175, 0.3);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .botoes-hero {
+      display: flex;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
 
     .botao-primario {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
-      background: var(--accent);
+      gap: 0.75rem;
+      padding: 1.25rem 2rem;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
       color: white;
       border-radius: 50px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
-      transition: var(--transition);
-      box-shadow: 0 4px 16px rgba(30, 64, 175, 0.3);
+      transition: var(--transicao);
+      box-shadow: var(--sombra);
     }
 
     .botao-primario:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(30, 64, 175, 0.4);
+      transform: translateY(-3px);
+      box-shadow: var(--sombra-hover);
     }
 
     .botao-secundario {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
+      gap: 0.75rem;
+      padding: 1.25rem 2rem;
       background: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
+      color: var(--cor-primaria);
+      border: 2px solid var(--cor-primaria);
       border-radius: 50px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
-      transition: var(--transition);
+      transition: var(--transicao);
     }
 
     .botao-secundario:hover {
-      background: var(--accent);
+      background: var(--cor-primaria);
       color: white;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    .destaque-image {
+    .imagem-hero {
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .destaque-image img {
+    .imagem-hero img {
       width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius: var(--raio-borda);
+      box-shadow: var(--sombra);
+      animation: flutuacao 3s ease-in-out infinite;
+    }
+
+    @keyframes flutuacao {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
     }
 
     @media (max-width: 900px) {
-      .destaque-grid {
+      .grade-hero {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 3rem;
       }
-      .destaque-badges {
-        justify-content: center;
+      .conteudo-hero h1 {
+        font-size: 2rem;
       }
-      .destaque-cta {
+      .botoes-hero {
         justify-content: center;
-      }
-      .destaque::before {
-        width: 300px;
-        height: 300px;
-        transform: translate(20%, -20%);
       }
     }
 
-    /* Services */
-    .servicos {
-      padding: 5rem 0;
-      background: var(--bg-card);
+    /* ========== SERVIÇOS ========== */
+    .secao-servicos {
+      padding: 6rem 0;
+      background: var(--cor-fundo-claro);
     }
 
     .cabecalho-secao {
@@ -325,264 +322,332 @@
     }
 
     .cabecalho-secao h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
       font-weight: 700;
       margin-bottom: 1rem;
-      color: var(--text);
+      color: var(--cor-texto);
     }
 
     .cabecalho-secao p {
       font-size: 1.1rem;
-      color: var(--text-muted);
+      color: var(--cor-texto-muteda);
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .servicos-grid {
+    .grade-servicos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
     .cartao-servico {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: var(--transition);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      background: var(--cor-fundo-mais-claro);
+      border: 1px solid var(--cor-borda);
+      border-radius: var(--raio-borda);
+      padding: 2.5rem;
+      transition: var(--transicao);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cartao-servico::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cor-primaria), var(--cor-secundaria));
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
     }
 
     .cartao-servico:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: rgba(30, 64, 175, 0.2);
+      transform: translateY(-8px);
+      border-color: var(--cor-primaria);
+      box-shadow: 0 10px 30px rgba(30, 64, 175, 0.2);
+    }
+
+    .cartao-servico:hover::before {
+      transform: translateX(0);
     }
 
     .icone-servico {
       width: 60px;
       height: 60px;
-      background: var(--accent-soft);
+      background: rgba(30, 64, 175, 0.15);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.8rem;
       margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      color: var(--accent);
+      transition: var(--transicao);
+    }
+
+    .cartao-servico:hover .icone-servico {
+      background: rgba(30, 64, 175, 0.25);
+      transform: scale(1.1);
     }
 
     .cartao-servico h3 {
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 1rem;
-      color: var(--text);
+      color: var(--cor-texto);
     }
 
     .cartao-servico p {
-      color: var(--text-muted);
-      line-height: 1.6;
+      color: var(--cor-texto-muteda);
+      line-height: 1.7;
     }
 
-    /* About */
-    .sobre {
-      padding: 5rem 0;
-      background: var(--bg-accent);
+    /* ========== SOBRE ========== */
+    .secao-sobre {
+      padding: 6rem 0;
+      background: var(--cor-fundo);
     }
 
-    .sobre-grid {
+    .grade-sobre {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
     }
 
-    .sobre-content h2 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 2.25rem;
+    .conteudo-sobre h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
       font-weight: 700;
       margin-bottom: 1.5rem;
-      color: var(--text);
+      color: var(--cor-texto);
     }
 
-    .sobre-content p {
+    .conteudo-sobre p {
       font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--text-muted);
+      color: var(--cor-texto-muteda);
       margin-bottom: 1.5rem;
+      line-height: 1.8;
     }
 
-    .sobre-stats {
+    .estatisticas {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
-    .stat-item {
+    .item-estatistica {
       text-align: center;
+      padding: 1.5rem;
+      background: var(--cor-fundo-claro);
+      border-radius: var(--raio-pequeno);
+      border-left: 3px solid var(--cor-primaria);
     }
 
     .numero-estatistica {
-      font-family: "Playfair Display", Georgia, serif;
+      display: block;
+      font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
-      color: var(--accent);
-      display: block;
+      color: var(--cor-primaria);
       margin-bottom: 0.5rem;
     }
 
     .rotulo-estatistica {
       font-size: 0.9rem;
-      color: var(--text-muted);
-      font-weight: 500;
+      color: var(--cor-texto-muteda);
+      font-weight: 600;
+    }
+
+    .imagem-sobre {
+      position: relative;
+    }
+
+    .imagem-sobre img {
+      width: 100%;
+      border-radius: var(--raio-borda);
+      box-shadow: var(--sombra);
     }
 
     @media (max-width: 900px) {
-      .sobre-grid {
+      .grade-sobre {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 3rem;
       }
-      .sobre-stats {
+      .estatisticas {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    /* CTA */
-    .cta {
-      padding: 5rem 0;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-      color: white;
+    /* ========== CTA ========== */
+    .secao-cta {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .cta h2 {
-      font-family: "Playfair Display", Georgia, serif;
+    .secao-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+      z-index: 1;
+    }
+
+    .secao-cta > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .secao-cta h2 {
+      font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      color: white;
     }
 
-    .cta p {
+    .secao-cta p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      opacity: 0.9;
+      color: rgba(255, 255, 255, 0.9);
     }
 
-    .cta .botao-primario {
+    .secao-cta .botao-primario {
       background: white;
-      color: var(--accent);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      color: var(--cor-primaria);
+      font-weight: 700;
     }
 
-    .cta .botao-primario:hover {
-      background: var(--bg-card);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    .secao-cta .botao-primario:hover {
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    /* Footer */
+    /* ========== RODAPÉ ========== */
     footer {
-      padding: 3rem 0;
-      background: var(--text);
-      color: white;
+      background: var(--cor-fundo-claro);
+      padding: 4rem 0;
+      border-top: 1px solid var(--cor-borda);
+    }
+
+    .rodape-conteudo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .coluna-rodape h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--cor-texto);
+    }
+
+    .coluna-rodape ul {
+      list-style: none;
+    }
+
+    .coluna-rodape a {
+      color: var(--cor-texto-muteda);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: block;
+      transition: var(--transicao);
+    }
+
+    .coluna-rodape a:hover {
+      color: var(--cor-primaria);
+      transform: translateX(4px);
+    }
+
+    .coluna-rodape p {
+      color: var(--cor-texto-muteda);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .rodape-inferior {
       text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cor-borda);
+      color: var(--cor-texto-muteda);
+      font-size: 0.9rem;
     }
 
-    footer p {
-      opacity: 0.8;
+    .animacao-entrada {
+      animation: entrada 0.6s ease-out forwards;
+      opacity: 0;
     }
 
-    /* Responsive */
-    @media (max-width: 640px) {
-      .destaque {
-        padding: 3rem 0 4rem;
+    @keyframes entrada {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      .servicos {
-        padding: 3rem 0;
-      }
-      .sobre {
-        padding: 3rem 0;
-      }
-      .cta {
-        padding: 3rem 0;
-      }
-      .destaque-badges {
-        justify-content: center;
-      }
-      .destaque-cta {
-        flex-direction: column;
-        align-items: center;
-      }
-      .servicos-grid {
-        grid-template-columns: 1fr;
-      }
-      .sobre-stats {
-        grid-template-columns: 1fr !important;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="conteiner navegacao">
-      <div class="logotipo">Dr. Nome</div>
-      <nav class="links-navegacao">
-        <a href="#servicos">Áreas de Atuação</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="botao-cabecalho" target="_blank">
-          Agendar Consulta
-        </a>
+    <div class="contêiner">
+      <nav>
+        <div class="logo">⚖️ Dr. Nome</div>
+        <ul>
+          <li><a href="#servicos">Áreas de Atuação</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="botao-cta">Agendar Consulta</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="destaque">
-      <div class="conteiner">
-        <div class="grade-destaque">
-          <div class="conteudo-destaque">
-            <h1>Justiça com <span class="highlight">Integridade</span></h1>
+    <section class="hero">
+      <div class="contêiner">
+        <div class="grade-hero">
+          <div class="conteudo-hero">
+            <h1>Justiça com <span class="destaques">Integridade e Ética</span></h1>
             <p>Advogado especializado em direito civil, trabalhista e empresarial. Mais de 10 anos de experiência defendendo seus direitos com ética, transparência e resultados comprovados.</p>
 
-            <div class="distintivos-destaque">
-              <div class="badge">
-                <span class="icone-distintivo">⚖️</span>
-                <span>OAB/SP 123.456</span>
-              </div>
-              <div class="badge">
-                <span class="icone-distintivo">🏆</span>
-                <span>10+ Anos de Experiência</span>
-              </div>
-              <div class="badge">
-                <span class="icone-distintivo">⭐</span>
-                <span>500+ Casos Resolvidos</span>
-              </div>
+            <div class="distintivos">
+              <div class="distintivo"><span>⚖️</span> <span>OAB/SP 123.456</span></div>
+              <div class="distintivo"><span>🏆</span> <span>10+ Anos de Experiência</span></div>
+              <div class="distintivo"><span>⭐</span> <span>500+ Casos Resolvidos</span></div>
             </div>
 
-            <div class="chamada-destaque">
-              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="botao-primario" target="_blank">
-                <span>Agendar Consulta</span>
-                <span>📞</span>
+            <div class="botoes-hero">
+              <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="botao-primario">
+                📞 Agendar Consulta
               </a>
-              <a href="#sobre" class="botao-secundario">
-                <span>Saiba Mais</span>
-                <span>↓</span>
-              </a>
+              <a href="#sobre" class="botao-secundario">Saiba Mais →</a>
             </div>
           </div>
 
-          <div class="imagem-destaque">
-            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Advogado em reunião" />
+          <div class="imagem-hero">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Advogado em reunião" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="servicos" class="servicos">
-      <div class="conteiner">
+    <section id="servicos" class="secao-servicos">
+      <div class="contêiner">
         <div class="cabecalho-secao">
           <h2>Áreas de Atuação</h2>
           <p>Especializado em diversas áreas do direito, oferecendo soluções jurídicas completas e personalizadas.</p>
@@ -592,60 +657,60 @@
           <div class="cartao-servico">
             <div class="icone-servico">🏢</div>
             <h3>Direito Empresarial</h3>
-            <p>Assessoria jurídica completa para empresas, contratos societários, fusões e aquisições, e resolução de conflitos empresariais.</p>
+            <p>Assessoria jurídica completa para empresas, contratos societários, fusões e aquisições.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">👥</div>
             <h3>Direito Trabalhista</h3>
-            <p>Defesa dos direitos trabalhistas, ações trabalhistas, acordos extrajudiciais e consultoria preventiva para empresas.</p>
+            <p>Defesa dos direitos trabalhistas, ações trabalhistas, acordos extrajudiciais.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">🏠</div>
             <h3>Direito Civil</h3>
-            <p>Questões contratuais, responsabilidade civil, direito de família, sucessões e disputas imobiliárias.</p>
+            <p>Questões contratuais, responsabilidade civil, direito de família e sucessões.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">💼</div>
             <h3>Direito do Consumidor</h3>
-            <p>Defesa dos direitos do consumidor, ações contra fornecedores e orientação em relações de consumo.</p>
+            <p>Defesa dos direitos do consumidor e ações contra fornecedores.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">📋</div>
             <h3>Direito Administrativo</h3>
-            <p>Assessoria em licitações, contratos administrativos e defesa em processos administrativos.</p>
+            <p>Assessoria em licitações, contratos administrativos e processos.</p>
           </div>
 
           <div class="cartao-servico">
             <div class="icone-servico">🔒</div>
             <h3>Direito Digital</h3>
-            <p>Proteção de dados, direito autoral na internet, contratos digitais e compliance digital.</p>
+            <p>Proteção de dados, direito autoral, contratos digitais e compliance.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="sobre" class="about">
-      <div class="conteiner">
-        <div class="about-grid">
+    <section id="sobre" class="secao-sobre">
+      <div class="contêiner">
+        <div class="grade-sobre">
           <div class="conteudo-sobre">
             <h2>Compromisso com a Justiça</h2>
-            <p>Com mais de uma década de experiência no mercado jurídico, construí minha carreira com base na ética profissional, transparência e dedicação aos clientes. Cada caso é tratado com a atenção que merece, buscando sempre as melhores soluções jurídicas.</p>
-            <p>Minha abordagem combina conhecimento técnico atualizado com uma visão humanizada do direito, entendendo que cada cliente tem necessidades únicas e merece um atendimento personalizado.</p>
+            <p>Com mais de uma década de experiência no mercado jurídico, construí minha carreira com base na ética profissional, transparência e dedicação aos clientes.</p>
+            <p>Cada caso é tratado com a atenção que merece. Minha abordagem combina conhecimento técnico atualizado com uma visão humanizada do direito.</p>
 
-            <div class="estatisticas-sobre">
-              <div class="stat-item">
+            <div class="estatisticas">
+              <div class="item-estatistica">
                 <span class="numero-estatistica">10+</span>
                 <span class="rotulo-estatistica">Anos de Experiência</span>
               </div>
-              <div class="stat-item">
+              <div class="item-estatistica">
                 <span class="numero-estatistica">500+</span>
                 <span class="rotulo-estatistica">Casos Resolvidos</span>
               </div>
-              <div class="stat-item">
+              <div class="item-estatistica">
                 <span class="numero-estatistica">98%</span>
                 <span class="rotulo-estatistica">Satisfação dos Clientes</span>
               </div>
@@ -653,66 +718,92 @@
           </div>
 
           <div class="imagem-sobre">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dr. Nome - Advogado" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Dr. Nome" />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="conteiner">
+    <section class="secao-cta" id="contato">
+      <div class="contêiner">
         <h2>Pronto para Resolver seu Caso?</h2>
-        <p>Agende uma consulta inicial gratuita e vamos discutir sua situação jurídica.</p>
-        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="botao-primario" target="_blank">
-          <span>Agendar Consulta Gratuita</span>
-          <span>📞</span>
+        <p>Agende uma consulta inicial gratuita e vamos discutir sua situação jurídica com confidencialidade.</p>
+        <a href="https://wa.me/5561995510006?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="botao-primario">
+          📞 Agendar Consulta Gratuita
         </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="conteiner">
-      <p>© 2024 Dr. Nome — Advogado. Todos os direitos reservados.</p>
+    <div class="contêiner">
+      <div class="rodape-conteudo">
+        <div class="coluna-rodape">
+          <h3>Sobre</h3>
+          <p>Advogado especializado com foco em soluções jurídicas personalizadas e resultados comprovados.</p>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Áreas de Atuação</h3>
+          <ul>
+            <li><a href="#servicos">Direito Empresarial</a></li>
+            <li><a href="#servicos">Direito Trabalhista</a></li>
+            <li><a href="#servicos">Direito Civil</a></li>
+            <li><a href="#servicos">Direito Digital</a></li>
+          </ul>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="tel:+5561995510006">📞 (61) 99551-0006</a></li>
+            <li><a href="mailto:contato@example.com">📧 contato@example.com</a></li>
+            <li><a href="#">📍 Brasília, DF</a></li>
+          </ul>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape-inferior">
+        <p>&copy; 2024 Dr. Nome — Advogado Especializado. Todos os direitos reservados. | OAB/SP 123.456</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Smooth scroll for anchor links
+    // Scroll suave para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // Add intersection observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+    // Observador de intersecção para animações
+    const opcoes = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('animacao-entrada');
+          observador.unobserve(entrada.target);
         }
       });
-    }, observerOptions);
+    }, opcoes);
 
-    // Observe elements for animation
-    document.querySelectorAll('.cartao-servico, .sobre-content, .sobre-image').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
+    document.querySelectorAll('.cartao-servico, .conteudo-sobre, .imagem-sobre').forEach(elemento => {
+      observador.observe(elemento);
     });
   </script>
 </body>

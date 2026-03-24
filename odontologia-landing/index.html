@@ -28,7 +28,7 @@
       font-size: 1rem;
     }
     a { color: inherit; text-decoration: none; }
-    .conteiner { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
 
     /* Barra superior */
     .barra-topo {
@@ -66,9 +66,9 @@
       letter-spacing: -0.03em;
     }
     .marca span { color: var(--brand); }
-    .navegacao-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 500; }
-    .navegacao-links a { color: var(--muted); }
-    .navegacao-links a:hover { color: var(--brand); }
+    .nav-links { display: flex; gap: 1.75rem; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--brand); }
     .btn-cta {
       background: var(--brand);
       color: #fff !important;
@@ -79,7 +79,7 @@
     }
     .btn-cta:hover { background: var(--brand-dark); }
     @media (max-width: 700px) {
-      .navegacao-links { display: none; }
+      .nav-links { display: none; }
     }
 
     /* Hero: faixa azul + grid 3 ícones */
@@ -145,14 +145,14 @@
       gap: 1rem;
     }
     @media (max-width: 800px) { .cards-retos { grid-template-columns: 1fr; } }
-    .cartao-reto {
+    .card-reto {
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 1.5rem;
       background: var(--surface);
     }
-    .cartao-reto h3 { font-size: 1.05rem; margin-bottom: 0.5rem; font-weight: 600; }
-    .cartao-reto p { color: var(--muted); font-size: 0.92rem; }
+    .card-reto h3 { font-size: 1.05rem; margin-bottom: 0.5rem; font-weight: 600; }
+    .card-reto p { color: var(--muted); font-size: 0.92rem; }
 
     .faixa-servicos {
       background: var(--surface);
@@ -207,20 +207,20 @@
   </div>
 
   <header class="cabecalho">
-    <div class="conteiner cabecalho-interno">
+    <div class="wrap cabecalho-inner">
       <p class="marca">Dr. Nome <span>Sobrenome</span></p>
-      <nav class="links-navegacao" aria-label="Principal">
+      <nav class="nav-links" aria-label="Principal">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#contato">Contato</a>
       </nav>
-      <a class="botao-acao" href="#contato">Agendar</a>
+      <a class="btn-cta" href="#contato">Agendar</a>
     </div>
   </header>
 
   <main>
-    <section class="faixa-destaque">
-      <div class="conteiner">
+    <section class="faixa-hero">
+      <div class="wrap">
         <h1>Sorriso saudável com diagnóstico claro</h1>
         <p class="sub">Consultório com protocolos de biossegurança, equipamentos modernos e planos de tratamento explicados com transparência.</p>
         <div class="grid-tres">
@@ -244,22 +244,22 @@
     </section>
 
     <section id="sobre" class="secao-branca">
-      <div class="conteiner">
+      <div class="wrap">
         <p class="titulo-secao">Sobre</p>
         <h2>Consultório odontológico</h2>
         <p class="texto-muted">
           Sou dentista formado(a) em [faculdade], com experiência em [ortodontia, implantes]. Priorizo diagnóstico cuidadoso e acompanhamento em cada etapa do tratamento.
         </p>
         <div class="cards-retos">
-          <div class="cartao-reto">
+          <div class="card-reto">
             <h3>Diagnóstico didático</h3>
             <p>Explicação clara do que precisa ser feito, com opções e prazos.</p>
           </div>
-          <div class="cartao-reto">
+          <div class="card-reto">
             <h3>Agenda organizada</h3>
             <p>Horários combinados e confirmação para respeitar seu tempo.</p>
           </div>
-          <div class="cartao-reto">
+          <div class="card-reto">
             <h3>Biossegurança</h3>
             <p>Protocolos atualizados para sua tranquilidade.</p>
           </div>
@@ -268,7 +268,7 @@
     </section>
 
     <section id="servicos" class="faixa-servicos">
-      <div class="conteiner">
+      <div class="wrap">
         <p class="titulo-secao">Serviços</p>
         <h2 style="margin-bottom: 2rem;">O que oferecemos</h2>
         <ul class="lista-servicos">
@@ -282,7 +282,7 @@
     <section id="contato" class="cta-final">
       <h2>Agende sua avaliação</h2>
       <p>Envie uma mensagem — retorno com horários e valores.</p>
-      <a class="botao-grande" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vim%20pela%20landing%20de%20odontologia." target="_blank" rel="noopener noreferrer">Me chame aqui</a>
+      <a class="btn-grande" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vim%20pela%20landing%20de%20odontologia." target="_blank" rel="noopener noreferrer">Me chame aqui</a>
     </section>
   </main>
 
