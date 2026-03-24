@@ -1,8 +1,5 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Debug: verificar se o script está carregando
-console.log("Script main.js carregado com sucesso!");
-
 // Intersection Observer para animações de entrada
 const observerOptions = {
   threshold: 0.2,
@@ -44,33 +41,33 @@ const PAINEL_DADOS = {
     titulo: "Landings — área da saúde",
     subtitulo: "Escolha uma demonstração para abrir em nova aba. As demais você pode ir publicando com o tempo.",
     opcoes: [
-      { label: "Psicologia / consultório", href: "../projetos/psicologa-landing/index.html", icon: "🧠" },
-      { label: "Odontologia / dentista", href: "../projetos/odontologia-landing/index.html", icon: "🦷" },
-      { label: "Nutrição", href: "../projetos/nutricao-landing/index.html", icon: "🥗" },
-      { label: "Clínica / agenda médica", href: "../projetos/clinica-landing/index.html", icon: "🏥" },
+      { label: "Psicologia / consultório", href: "../psicologa-landing/index.html", icon: "🧠" },
+      { label: "Odontologia / dentista", href: "../odontologia-landing/index.html", icon: "🦷" },
+      { label: "Nutrição", href: "../nutricao-landing/index.html", icon: "🥗" },
+      { label: "Clínica / agenda médica", href: "../clinica-landing/index.html", icon: "🏥" },
     ],
   },
   fitness: {
     titulo: "Landings — fitness e bem-estar",
     subtitulo: "Páginas para personal trainers e profissionais de saúde física.",
     opcoes: [
-      { label: "Personal Trainer", href: "../projetos/personal-landing/index.html", icon: "💪" },
+      { label: "Personal Trainer", href: "../personal-landing/index.html", icon: "💪" },
     ],
   },
   beleza: {
     titulo: "Landings — beleza e estética",
     subtitulo: "Páginas para salões de beleza, barbearias e profissionais de estética.",
     opcoes: [
-      { label: "Salão de Beleza", href: "../projetos/beleza-landing/index.html", icon: "💅" },
-      { label: "Barbearia", href: "../projetos/barbearia-landing/index.html", icon: "✂️" },
+      { label: "Salão de Beleza", href: "../beleza-landing/index.html", icon: "💅" },
+      { label: "Barbearia", href: "../barbearia-landing/index.html", icon: "✂️" },
     ],
   },
   servicos: {
     titulo: "Landings — serviços locais",
     subtitulo: "Páginas para oficinas, consultorias e outros serviços profissionais.",
     opcoes: [
-      { label: "Oficina Mecânica", href: "../projetos/oficina-landing/index.html", icon: "🔧" },
-      { label: "Advocacia / jurídico", href: "../projetos/advogado-landing/index.html", icon: "⚖️" },
+      { label: "Oficina Mecânica", href: "../oficina-landing/index.html", icon: "🔧" },
+      { label: "Advocacia / jurídico", href: "../advogado-landing/index.html", icon: "⚖️" },
     ],
   },
   proximo: {
@@ -85,10 +82,10 @@ const PAINEL_DADOS = {
     titulo: "Landings por nicho",
     subtitulo: "Exemplos que você pode desenvolver e depois ligar a demos reais neste painel.",
     opcoes: [
-      { label: "Jurídico / advogado", href: "../projetos/advogado-landing/index.html", icon: "⚖️" },
-      { label: "Fitness / personal trainer", href: "../projetos/personal-landing/index.html", icon: "💪" },
-      { label: "Beleza / estética", href: "../projetos/beleza-landing/index.html", icon: "💅" },
-      { label: "Serviços locais (oficina, barbearia…)", href: "../projetos/oficina-landing/index.html", icon: "🔧" },
+      { label: "Jurídico / advogado", href: "../advogado-landing/index.html", icon: "⚖️" },
+      { label: "Fitness / personal trainer", href: "../personal-landing/index.html", icon: "💪" },
+      { label: "Beleza / estética", href: "../beleza-landing/index.html", icon: "💅" },
+      { label: "Serviços locais (oficina, barbearia…)", href: "../oficina-landing/index.html", icon: "🔧" },
     ],
   },
 };
@@ -187,10 +184,8 @@ function fecharPainel() {
 }
 
 document.querySelectorAll(".ativador-card").forEach(function (btn) {
-  console.log("Adicionando event listener para botão:", btn.getAttribute("data-painel"));
   btn.addEventListener("click", function () {
     const chave = btn.getAttribute("data-painel");
-    console.log("Botão clicado, chave:", chave);
     if (chave) abrirPainel(chave);
   });
 });
