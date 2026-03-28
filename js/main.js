@@ -10,8 +10,8 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate-in');
-    } else {
-      entry.target.classList.remove('animate-in');
+      /* para de observar após animar — não esconde mais ao sair da viewport */
+      observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
@@ -51,8 +51,8 @@ const PAINEL_DADOS = {
     titulo: "Landings — fitness e bem-estar",
     subtitulo: "Páginas para personal trainers e profissionais de saúde física.",
     opcoes: [
-      { label: "Personal Trainer", href: "https://DevCodeMind.github.io/Portif-lio-Profissional/projetos/personal-landing/index.html", icon: "💪" },
-      { label: "Academia Moderna", href: "https://DevCodeMind.github.io/Portif-lio-Profissional/projetos/academia-landing/index.html", icon: "🏋️" },
+      { label: "Personal Trainer", href: "projetos/personal-landing/index.html", icon: "💪" },
+      { label: "Academia Moderna", href: "projetos/academia-landing/index.html", icon: "🏋️" },
     ],
   },
   beleza: {

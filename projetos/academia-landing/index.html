@@ -9,23 +9,26 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --cor-primaria: #1a1a1a;
-      --cor-secundaria: #f5f5f5;
-      --cor-acento: #e5e5e5;
-      --cor-texto: #1a1a1a;
-      --cor-texto-claro: #666666;
-      --cor-fundo: #ffffff;
-      --cor-borda: #e5e5e5;
-      --sombra: 0 2px 8px rgba(0, 0, 0, 0.1);
-      --sombra-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
-      --transicao: all 0.3s ease;
-      --raio-borda: 4px;
-      --espacamento: 1rem;
-      --largura-maxima: 1200px;
+      --cor-primaria: #ff6b35;
+      --cor-primaria-escura: #d84727;
+      --cor-secundaria: #004e89;
+      --cor-terciaria: #1a7ba0;
+      --cor-acento: #f7b801;
+      --cor-texto: #1a1a2e;
+      --cor-texto-claro: #624e88;
+      --cor-texto-branco: #ffffff;
+      --cor-fundo: #f5f5f5;
+      --cor-card: #ffffff;
+      --cor-borda: #e0e0e0;
+      --sombra: 0 8px 16px rgba(0, 0, 0, 0.1);
+      --sombra-hover: 0 16px 32px rgba(0, 0, 0, 0.15);
+      --transicao: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+      --raio-borda: 20px;
+      --largura-maxima: 1300px;
     }
 
     * {
@@ -39,372 +42,803 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: var(--cor-fundo);
       color: var(--cor-texto);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    .container {
+    .contenedor {
       max-width: var(--largura-maxima);
       margin: 0 auto;
-      padding: 0 var(--espacamento);
+      padding: 0 2rem;
     }
 
-    /* Header */
-    .header {
+    /* ========== CABEÇALHO FLUTUANTE ========== */
+    .cabecalho-principal {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--cor-borda);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 2px solid var(--cor-acento);
       z-index: 1000;
       transition: var(--transicao);
+      padding: 1rem 0;
     }
 
-    .nav {
+    .cabecalho-principal.ativo {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--sombra);
+    }
+
+    .barra-navegacao {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 0;
+      padding: 0.5rem 0;
     }
 
-    .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--cor-texto);
+    .marca {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       text-decoration: none;
     }
 
-    .nav-links {
+    .menu-navegacao {
       display: flex;
-      gap: 2rem;
+      gap: 3rem;
       list-style: none;
+      align-items: center;
     }
 
-    .nav-links a {
+    .menu-navegacao a {
       text-decoration: none;
-      color: var(--cor-texto-claro);
+      color: var(--cor-texto);
       font-weight: 500;
+      position: relative;
+      transition: var(--transicao);
+      font-size: 0.95rem;
+    }
+
+    .menu-navegacao a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--cor-primaria);
       transition: var(--transicao);
     }
 
-    .nav-links a:hover {
-      color: var(--cor-texto);
+    .menu-navegacao a:hover::after {
+      width: 100%;
     }
 
-    /* Hero Section */
-    .hero {
-      padding: 120px 0 80px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--cor-acento);
-      color: var(--cor-texto);
-      padding: 0.5rem 1rem;
+    .botao-menu {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+      color: var(--cor-texto-branco);
+      padding: 0.8rem 2rem;
       border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin-bottom: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transicao);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
     }
 
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      color: var(--cor-texto);
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
+    .botao-menu:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
     }
 
-    .hero p {
-      font-size: 1.125rem;
-      color: var(--cor-texto-claro);
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
+    /* ========== SEÇÃO HERO ========== */
+    .secao-principal {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 80px;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-cta {
+    .secao-principal::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.1), transparent);
+      border-radius: 50%;
+      animation: flutuar 6s ease-in-out infinite;
+    }
+
+    .secao-principal::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 78, 137, 0.08), transparent);
+      border-radius: 50%;
+      animation: flutuar 8s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(30px); }
+    }
+
+    .conteudo-hero {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .etiqueta-destaque {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--cor-primaria);
-      color: white;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      border-radius: var(--raio-borda);
-      font-weight: 500;
-      transition: var(--transicao);
-    }
-
-    .hero-cta:hover {
-      background: #000000;
-      transform: translateY(-2px);
-    }
-
-    /* Services Section */
-    .services {
-      padding: 80px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.5rem;
+      background: rgba(255, 107, 53, 0.1);
+      color: var(--cor-primaria);
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
       font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--cor-primaria);
+    }
+
+    .titulo-principal {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
       color: var(--cor-texto);
-      margin-bottom: 1rem;
     }
 
-    .section-subtitle {
-      font-size: 1.125rem;
+    .titulo-principal .destaque {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .paragrafo-principal {
+      font-size: 1.2rem;
       color: var(--cor-texto-claro);
-      max-width: 600px;
-      margin: 0 auto;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+      max-width: 550px;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    .grupo-botoes {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
 
-    .service-card {
-      background: white;
-      border: 1px solid var(--cor-borda);
-      border-radius: var(--raio-borda);
-      padding: 2rem;
+    .botao-primario {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+      color: var(--cor-texto-branco);
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
       transition: var(--transicao);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .service-card:hover {
-      box-shadow: var(--sombra-hover);
+    .botao-primario:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+    }
+
+    .botao-secundario {
+      background: transparent;
+      color: var(--cor-primaria);
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid var(--cor-primaria);
+      cursor: pointer;
+      transition: var(--transicao);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .botao-secundario:hover {
+      background: var(--cor-primaria);
+      color: var(--cor-texto-branco);
       transform: translateY(-4px);
     }
 
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--cor-acento);
-      border-radius: 50%;
+    .estatisticas-rapidas {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .item-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .numero-stat {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--cor-primaria);
+      line-height: 1;
+    }
+
+    .label-stat {
+      font-size: 0.9rem;
+      color: var(--cor-texto-claro);
+      margin-top: 0.5rem;
+    }
+
+    .imagem-hero {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-imagem {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1;
+    }
+
+    .box-imagem::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-acento) 100%);
+      border-radius: var(--raio-borda);
+      opacity: 0.1;
+    }
+
+    .caixa-emoji {
+      width: 100%;
+      height: 100%;
+      background: var(--cor-card);
+      border-radius: var(--raio-borda);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
+      font-size: 250px;
+      box-shadow: var(--sombra-hover);
+      position: relative;
+      border: 2px solid var(--cor-borda);
     }
 
-    .service-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--cor-texto);
+    /* ========== SEÇÃO SERVIÇOS ========== */
+    .secao-servicos {
+      padding: 120px 0;
+      background: var(--cor-texto);
+      color: var(--cor-texto-branco);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .secao-servicos::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='40' cy='40' r='15'/%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+
+    .cabecalho-secao {
+      text-align: center;
+      margin-bottom: 5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .titulo-secao {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 800;
       margin-bottom: 1rem;
     }
 
-    .service-description {
-      color: var(--cor-texto-claro);
-      line-height: 1.6;
-    }
-
-    /* Stats Section */
-    .stats {
-      padding: 80px 0;
-      background: var(--cor-secundaria);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .stat-item {
-      padding: 2rem;
-    }
-
-    .stat-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--cor-texto);
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      color: var(--cor-texto-claro);
-      font-weight: 500;
-    }
-
-    /* CTA Section */
-    .cta {
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .cta-content {
-      max-width: 500px;
+    .subtitulo-secao {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    .cta h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
+    .grade-servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cartao-servico {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--raio-borda);
+      padding: 2.5rem;
+      transition: var(--transicao);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .cartao-servico::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-acento) 100%);
+      opacity: 0;
+      transition: var(--transicao);
+      z-index: -1;
+    }
+
+    .cartao-servico:hover::before {
+      opacity: 0.1;
+    }
+
+    .cartao-servico:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .icone-servico {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .titulo-servico {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .descricao-servico {
+      font-size: 1rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    /* ========== SEÇÃO VANTAGENS ========== */
+    .secao-vantagens {
+      padding: 120px 0;
+      background: var(--cor-fundo);
+    }
+
+    .grade-vantagens {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .cartao-vantagem {
+      background: var(--cor-card);
+      padding: 2.5rem;
+      border-radius: var(--raio-borda);
+      border: 2px solid var(--cor-borda);
+      transition: var(--transicao);
+      position: relative;
+    }
+
+    .cartao-vantagem::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cor-primaria), var(--cor-acento));
+      border-radius: var(--raio-borda) var(--raio-borda) 0 0;
+      transform: scaleX(0);
+      transition: var(--transicao);
+      transform-origin: left;
+    }
+
+    .cartao-vantagem:hover::after {
+      transform: scaleX(1);
+    }
+
+    .cartao-vantagem:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra-hover);
+    }
+
+    .numero-vantagem {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--cor-primaria);
+      margin-bottom: 1rem;
+    }
+
+    .titulo-vantagem {
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--cor-texto);
       margin-bottom: 1rem;
     }
 
-    .cta p {
+    .descricao-vantagem {
+      color: var(--cor-texto-claro);
+      line-height: 1.7;
+    }
+
+    /* ========== SEÇÃO PLANOS ========== */
+    .secao-planos {
+      padding: 120px 0;
+      background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-terciaria) 100%);
+      color: var(--cor-texto-branco);
+    }
+
+    .cartao-plano {
+      background: var(--cor-card);
+      color: var(--cor-texto);
+      border-radius: var(--raio-borda);
+      padding: 3rem;
+      text-align: center;
+      transition: var(--transicao);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cartao-plano.destaque {
+      transform: scale(1.08);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border: 2px solid var(--cor-acento);
+    }
+
+    .cartao-plano:hover {
+      transform: translateY(-8px);
+    }
+
+    .cartao-plano.destaque:hover {
+      transform: scale(1.08) translateY(-8px);
+    }
+
+    .nome-plano {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--cor-primaria);
+    }
+
+    .cartao-plano.destaque .nome-plano {
+      color: var(--cor-acento);
+    }
+
+    .preco-plano {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--cor-primaria);
+      margin-bottom: 0.5rem;
+    }
+
+    .cartao-plano.destaque .preco-plano {
+      color: var(--cor-acento);
+    }
+
+    .periodo-plano {
+      font-size: 1rem;
       color: var(--cor-texto-claro);
       margin-bottom: 2rem;
     }
 
-    .cta-buttons {
+    .lista-plano {
+      list-style: none;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .item-lista-plano {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--cor-borda);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .item-lista-plano::before {
+      content: '✓';
+      color: var(--cor-primaria);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .cartao-plano.destaque .item-lista-plano::before {
+      color: var(--cor-acento);
+    }
+
+    .botao-plano {
+      width: 100%;
+      padding: 1.2rem;
+      border-radius: 50px;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transicao);
+      margin-top: 2rem;
+    }
+
+    .botao-plano-normal {
+      background: var(--cor-borda);
+      color: var(--cor-texto);
+    }
+
+    .botao-plano-normal:hover {
+      background: var(--cor-primaria);
+      color: var(--cor-texto-branco);
+    }
+
+    .botao-plano-destaque {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+      color: var(--cor-texto-branco);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .botao-plano-destaque:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+    }
+
+    .grade-planos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ========== SEÇÃO CTA ========== */
+    .secao-cta {
+      padding: 100px 0;
+      background: var(--cor-texto);
+      color: var(--cor-texto-branco);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .secao-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Crect x='0' y='0' width='60' height='60'/%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+
+    .conteudo-cta {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .titulo-cta {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .paragrafo-cta {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .botao-cta {
+      background: linear-gradient(135deg, var(--cor-primaria), var(--cor-acento));
+      color: var(--cor-texto-branco);
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transicao);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+      display: inline-block;
+    }
+
+    .botao-cta:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+    }
+
+    /* ========== RODAPÉ ========== */
+    .rodape {
+      background: linear-gradient(135deg, var(--cor-texto), #0f0f23);
+      color: var(--cor-texto-branco);
+      padding: 80px 0 30px;
+      position: relative;
+    }
+
+    .grade-rodape {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .coluna-rodape h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--cor-acento);
+    }
+
+    .coluna-rodape p {
+      opacity: 0.8;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .lista-rodape {
+      list-style: none;
+    }
+
+    .item-lista-rodape {
+      margin-bottom: 0.8rem;
+    }
+
+    .item-lista-rodape a {
+      color: var(--cor-texto-branco);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transicao);
+    }
+
+    .item-lista-rodape a:hover {
+      color: var(--cor-acento);
+      opacity: 1;
+    }
+
+    .redes-sociais-rodape {
       display: flex;
       gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .icone-rede {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
-      border-radius: var(--raio-borda);
-      font-weight: 500;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--cor-texto-branco);
       text-decoration: none;
       transition: var(--transicao);
+      font-size: 1.2rem;
     }
 
-    .btn-primary {
+    .icone-rede:hover {
       background: var(--cor-primaria);
-      color: white;
+      transform: translateY(-3px);
     }
 
-    .btn-primary:hover {
-      background: #000000;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--cor-texto);
-      border: 1px solid var(--cor-borda);
-    }
-
-    .btn-secondary:hover {
-      background: var(--cor-acento);
-      transform: translateY(-2px);
-    }
-
-    /* Footer */
-    .footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--cor-borda);
-      text-align: center;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .footer-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--cor-texto);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      color: var(--cor-texto-claro);
-      font-weight: 500;
-      transition: var(--transicao);
-    }
-
-    .footer-links a:hover {
-      color: var(--cor-texto);
-    }
-
-    .footer-bottom {
-      margin-top: 2rem;
+    .base-rodape {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 2rem;
-      border-top: 1px solid var(--cor-borda);
-      color: var(--cor-texto-claro);
-      font-size: 0.875rem;
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.9rem;
     }
 
-    /* Responsive */
+    /* ========== RESPONSIVO ========== */
     @media (max-width: 768px) {
-      .nav {
+      .menu-navegacao {
+        gap: 1.5rem;
+      }
+
+      .secao-principal {
+        padding-top: 100px;
+        gap: 2rem;
+        flex-direction: column-reverse;
+      }
+
+      .titulo-principal {
+        font-size: 2rem;
+      }
+
+      .estatisticas-rapidas {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
       }
 
-      .nav-links {
-        gap: 1rem;
-      }
-
-      .hero {
-        padding: 100px 0 60px;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .services-grid {
+      .grade-servicos,
+      .grade-vantagens,
+      .grade-planos {
         grid-template-columns: 1fr;
       }
 
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .cartao-plano.destaque {
+        transform: scale(1);
       }
 
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
+      .cartao-plano.destaque:hover {
+        transform: translateY(-8px);
       }
 
-      .footer-content {
+      .titulo-secao {
+        font-size: 2rem;
+      }
+
+      .titulo-cta {
+        font-size: 2rem;
+      }
+
+      .grupo-botoes {
         flex-direction: column;
+        align-items: stretch;
+      }
+
+      .botao-primario,
+      .botao-secundario {
+        width: 100%;
         text-align: center;
+        justify-content: center;
       }
     }
 
-    /* Animations */
-    @keyframes fadeInUp {
+    /* ========== ANIMAÇÕES ========== */
+    @keyframes entradaFade {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
@@ -412,173 +846,297 @@
       }
     }
 
-    .animate-in {
-      animation: fadeInUp 0.6s ease-out forwards;
+    .animar {
+      animation: entradaFade 0.6s ease-out forwards;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="container nav">
-      <a href="#inicio" class="logo">Academia Moderna</a>
-      <ul class="nav-links">
+  <!-- CABEÇALHO -->
+  <header class="cabecalho-principal" id="cabecalho">
+    <nav class="contenedor barra-navegacao">
+      <a href="#inicio" class="marca">💪 Academia Moderna</a>
+      <ul class="menu-navegacao">
         <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#vantagens">Vantagens</a></li>
+        <li><a href="#planos">Planos</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="https://wa.me/5511999999999" class="botao-menu" target="_blank">Começar Agora</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="inicio" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <span class="hero-badge">🏋️ Treinos Profissionais</span>
-        <h1>Transforme seu corpo,<br>eleve sua mente</h1>
-        <p>Equipamentos modernos, treinadores qualificados e um ambiente acolhedor para você alcançar seus objetivos de forma saudável e sustentável.</p>
-        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de conhecer a Academia Moderna." class="hero-cta" target="_blank">
-          Começar Agora →
+  <!-- SEÇÃO HERO -->
+  <section id="inicio" class="secao-principal">
+    <div class="conteudo-hero">
+      <span class="etiqueta-destaque">🎯 Transforme seu estilo de vida</span>
+      <h1 class="titulo-principal">Treine com <span class="destaque">dedicação</span>, descubra <span class="destaque">resultados</span></h1>
+      <p class="paragrafo-principal">Somos a academia que combina equipamentos de ponta com treinadores especializados para oferecer a melhor experiência fitness da sua vida.</p>
+      
+      <div class="grupo-botoes">
+        <a href="https://wa.me/5511999999999" class="botao-primario" target="_blank">
+          <span>🚀</span> Avaliação Gratuita
+        </a>
+        <a href="#servicos" class="botao-secundario">
+          <span>📋</span> Conhecer Serviços
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section id="servicos" class="services">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <p class="section-subtitle">Programas completos desenvolvidos por profissionais especializados para todos os níveis</p>
+      <div class="estatisticas-rapidas">
+        <div class="item-stat">
+          <span class="numero-stat">500+</span>
+          <span class="label-stat">Alunos Felizes</span>
+        </div>
+        <div class="item-stat">
+          <span class="numero-stat">5+</span>
+          <span class="label-stat">Anos Atuando</span>
+        </div>
+        <div class="item-stat">
+          <span class="numero-stat">98%</span>
+          <span class="label-stat">Satisfação</span>
+        </div>
       </div>
+    </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">💪</div>
-          <h3 class="service-title">Musculação</h3>
-          <p class="service-description">Equipamentos de última geração e acompanhamento personalizado para desenvolvimento muscular seguro e eficiente.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🏃</div>
-          <h3 class="service-title">Treinos Funcionais</h3>
-          <p class="service-description">Exercícios que simulam movimentos do dia a dia, melhorando força, equilíbrio e resistência cardiovascular.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🧘</div>
-          <h3 class="service-title">Pilates & Yoga</h3>
-          <p class="service-description">Aulas focadas em flexibilidade, respiração e controle corporal para bem-estar físico e mental.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⚖️</div>
-          <h3 class="service-title">Avaliação Física</h3>
-          <p class="service-description">Análise completa da composição corporal, condicionamento físico e orientação nutricional personalizada.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">👥</div>
-          <h3 class="service-title">Aulas em Grupo</h3>
-          <p class="service-description">Treinos coletivos motivadores com foco em diferentes objetivos: emagrecimento, hipertrofia ou condicionamento.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">🏊</div>
-          <h3 class="service-title">Natação & Hidroginástica</h3>
-          <p class="service-description">Atividades aquáticas de baixo impacto para reabilitação, emagrecimento e melhoria da qualidade de vida.</p>
-        </div>
+    <div class="imagem-hero">
+      <div class="box-imagem">
+        <div class="caixa-emoji">💪</div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Alunos Ativos</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">5</div>
-          <div class="stat-label">Anos de Excelência</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Profissionais</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Satisfação</div>
-        </div>
+  <!-- SEÇÃO SERVIÇOS -->
+  <section id="servicos" class="secao-servicos">
+    <div class="contenedor">
+      <div class="cabecalho-secao">
+        <h2 class="titulo-secao">Nossos Serviços</h2>
+        <p class="subtitulo-secao">Programas especializados para todas as idades e objetivos</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section id="contato" class="cta">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Pronto para começar?</h2>
-        <p>Entre em contato conosco e agende sua avaliação gratuita. Transforme seus objetivos em realidade.</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma avaliação gratuita." class="btn btn-primary" target="_blank">
-            📞 Agendar Avaliação
-          </a>
-          <a href="tel:+5511999999999" class="btn btn-secondary">
-            📞 Ligar Agora
-          </a>
+      <div class="grade-servicos">
+        <div class="cartao-servico">
+          <span class="icone-servico">🏋️</span>
+          <h3 class="titulo-servico">Musculação</h3>
+          <p class="descricao-servico">Equipamentos modernos com acompanhamento de treinadores certificados para ganhos de força e hipertrofia.</p>
+        </div>
+
+        <div class="cartao-servico">
+          <span class="icone-servico">🏃</span>
+          <h3 class="titulo-servico">Cardio</h3>
+          <p class="descricao-servico">Treinos de resistência cardiovascular com equipamentos de última geração e técnicas comprovadas.</p>
+        </div>
+
+        <div class="cartao-servico">
+          <span class="icone-servico">🧘</span>
+          <h3 class="titulo-servico">Yoga & Pilates</h3>
+          <p class="descricao-servico">Aulas focadas em flexibilidade, respiração e harmonia entre corpo e mente.</p>
+        </div>
+
+        <div class="cartao-servico">
+          <span class="icone-servico">👥</span>
+          <h3 class="titulo-servico">Treinos em Grupo</h3>
+          <p class="descricao-servico">Modalidades coletivas motivadoras: zumba, funcional, box e muito mais.</p>
+        </div>
+
+        <div class="cartao-servico">
+          <span class="icone-servico">🥗</span>
+          <h3 class="titulo-servico">Nutrição</h3>
+          <p class="descricao-servico">Consultoria nutricional personalizada para potencializar seus resultados.</p>
+        </div>
+
+        <div class="cartao-servico">
+          <span class="icone-servico">📱</span>
+          <h3 class="titulo-servico">App Mobile</h3>
+          <p class="descricao-servico">Acompanhe seus treinos, progresso e receba dicas exclusivas no seu celular.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">Academia Moderna</div>
-        <div class="footer-links">
-          <a href="#servicos">Serviços</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#contato">Contato</a>
+  <!-- SEÇÃO VANTAGENS -->
+  <section id="vantagens" class="secao-vantagens">
+    <div class="contenedor">
+      <div class="cabecalho-secao">
+        <h2 class="titulo-secao">Por Que Escolher a Gente?</h2>
+        <p class="subtitulo-secao">Diferenciais que fazem toda a diferença no seu treino</p>
+      </div>
+
+      <div class="grade-vantagens">
+        <div class="cartao-vantagem">
+          <div class="numero-vantagem">01</div>
+          <h3 class="titulo-vantagem">Treinadores Experientes</h3>
+          <p class="descricao-vantagem">Nossa equipe possui certificações internacionais e mais de 10 anos de experiência em fitness.</p>
+        </div>
+
+        <div class="cartao-vantagem">
+          <div class="numero-vantagem">02</div>
+          <h3 class="titulo-vantagem">Equipamentos Premium</h3>
+          <p class="descricao-vantagem">Investimos continuamente em equipamentos de última geração para sua segurança e conforto.</p>
+        </div>
+
+        <div class="cartao-vantagem">
+          <div class="numero-vantagem">03</div>
+          <h3 class="titulo-vantagem">Ambiente Acolhedor</h3>
+          <p class="descricao-vantagem">Uma comunidade que se apoia mutuamente e celebra o progresso de cada um.</p>
+        </div>
+
+        <div class="cartao-vantagem">
+          <div class="numero-vantagem">04</div>
+          <h3 class="titulo-vantagem">Modalidades Variadas</h3>
+          <p class="descricao-vantagem">Mais de 20 tipos diferentes de treinos e aulas para nunca ficar monótono.</p>
+        </div>
+
+        <div class="cartao-vantagem">
+          <div class="numero-vantagem">05</div>
+          <h3 class="titulo-vantagem">Horários Flexíveis</h3>
+          <p class="descricao-vantagem">Academia aberta de 5h às 23h para se encaixar na sua rotina.</p>
+        </div>
+
+        <div class="cartao-vantagem">
+          <div class="numero-vantagem">06</div>
+          <h3 class="titulo-vantagem">Resultados Garantidos</h3>
+          <p class="descricao-vantagem">Programas personalizados com acompanhamento mensal do seu progresso.</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Academia Moderna. Todos os direitos reservados.</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO PLANOS -->
+  <section id="planos" class="secao-planos">
+    <div class="contenedor">
+      <div class="cabecalho-secao">
+        <h2 class="titulo-secao">Escolha seu Plano</h2>
+        <p class="subtitulo-secao">Opções para todos os bolsos e objetivos</p>
+      </div>
+
+      <div class="grade-planos">
+        <div class="cartao-plano">
+          <h3 class="nome-plano">Básico</h3>
+          <div class="preco-plano">R$ 79<span style="font-size: 1.3rem;">/mês</span></div>
+          <p class="periodo-plano">Perfeito para começar</p>
+          <ul class="lista-plano">
+            <li class="item-lista-plano">Acesso à academia</li>
+            <li class="item-lista-plano">5 aulas/mês</li>
+            <li class="item-lista-plano">Sem avaliação</li>
+            <li class="item-lista-plano">Chat suporte</li>
+          </ul>
+          <button class="botao-plano botao-plano-normal">Escolher Plano</button>
+        </div>
+
+        <div class="cartao-plano destaque">
+          <h3 class="nome-plano">Premium</h3>
+          <div class="preco-plano">R$ 149<span style="font-size: 1.3rem;">/mês</span></div>
+          <p class="periodo-plano">Mais popular ⭐</p>
+          <ul class="lista-plano">
+            <li class="item-lista-plano">Acesso ilimitado</li>
+            <li class="item-lista-plano">Aulas ilimitadas</li>
+            <li class="item-lista-plano">1 avaliação/mês</li>
+            <li class="item-lista-plano">App Mobile</li>
+            <li class="item-lista-plano">Prioridade suporte</li>
+          </ul>
+          <button class="botao-plano botao-plano-destaque">Começar Agora</button>
+        </div>
+
+        <div class="cartao-plano">
+          <h3 class="nome-plano">Elite</h3>
+          <div class="preco-plano">R$ 299<span style="font-size: 1.3rem;">/mês</span></div>
+          <p class="periodo-plano">Para resultados máximos</p>
+          <ul class="lista-plano">
+            <li class="item-lista-plano">Tudo do Premium +</li>
+            <li class="item-lista-plano">Consultor pessoal</li>
+            <li class="item-lista-plano">Nutricionista</li>
+            <li class="item-lista-plano">Consultoria ilimitada</li>
+          </ul>
+          <button class="botao-plano botao-plano-normal">Escolher Plano</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO CTA -->
+  <section id="contato" class="secao-cta">
+    <div class="conteudo-cta">
+      <h2 class="titulo-cta">Pronto para transformar sua vida?</h2>
+      <p class="paragrafo-cta">Não espere mais! Agende sua avaliação gratuita agora mesmo e comece sua jornada rumo aos melhores resultados.</p>
+      <a href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma avaliação gratuita na Academia Moderna." class="botao-cta" target="_blank">
+        📞 Agendar Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="contenedor">
+      <div class="grade-rodape">
+        <div class="coluna-rodape">
+          <h3>Academia Moderna</h3>
+          <p>Transformando vidas através do fitness desde 2019. Somos mais que uma academia, somos uma comunidade.</p>
+          <div class="redes-sociais-rodape">
+            <a href="#" class="icone-rede">📘</a>
+            <a href="#" class="icone-rede">📷</a>
+            <a href="#" class="icone-rede">🐦</a>
+            <a href="#" class="icone-rede">▶️</a>
+          </div>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Links Rápidos</h3>
+          <ul class="lista-rodape">
+            <li class="item-lista-rodape"><a href="#servicos">Serviços</a></li>
+            <li class="item-lista-rodape"><a href="#vantagens">Vantagens</a></li>
+            <li class="item-lista-rodape"><a href="#planos">Planos</a></li>
+            <li class="item-lista-rodape"><a href="#">Blog</a></li>
+            <li class="item-lista-rodape"><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="coluna-rodape">
+          <h3>Contato</h3>
+          <p>📍 Rua das Academias, 123<br>Centro, São Paulo - SP</p>
+          <p>📞 (11) 9999-9999</p>
+          <p>✉️ contato@academiamoderna.com</p>
+          <p>🕐 Seg-Sex: 5h às 23h<br>Sáb-Dom: 7h às 19h</p>
+        </div>
+      </div>
+
+      <div class="base-rodape">
+        <p>&copy; 2024 Academia Moderna. Todos os direitos reservados. Desenvolvido com ❤️ por Wallef Ryan</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Intersection Observer para animações
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '0px 0px -10px 0px'
-    };
+    // Efeito no cabeçalho durante scroll
+    window.addEventListener('scroll', () => {
+      const cabecalho = document.getElementById('cabecalho');
+      if (window.scrollY > 100) {
+        cabecalho.classList.add('ativo');
+      } else {
+        cabecalho.classList.remove('ativo');
+      }
+    });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
+    // Animações ao entrar na viewport
+    const observador = new IntersectionObserver((elementos) => {
+      elementos.forEach(elemento => {
+        if (elemento.isIntersecting) {
+          elemento.target.classList.add('animar');
         }
       });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Observar elementos para animação
-    document.addEventListener('DOMContentLoaded', function() {
-      // Animações para seções
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        observer.observe(section);
-      });
+    document.querySelectorAll('.cartao-servico, .cartao-vantagem, .cartao-plano').forEach(el => {
+      observador.observe(el);
+    });
 
-      // Animações para cards
-      const cards = document.querySelectorAll('.service-card');
-      cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        observer.observe(card);
+    // Smooth scroll para links de navegação
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const destino = document.querySelector(link.getAttribute('href'));
+        if (destino) {
+          destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
   </script>

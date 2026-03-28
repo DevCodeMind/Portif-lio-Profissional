@@ -12,5 +12,7 @@ Desktop.ini
 *.docx
 *.doc
 
-# Opcional: descomente se não quiser versionar config local do Cursor
-# .cursor/
+# Arquivos de teste/rascunho
+orbita.html
+teste.html
+index_v3.html

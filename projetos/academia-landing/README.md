@@ -18,6 +18,25 @@ academia-landing/
 └── README.md          # Este arquivo
 ```
 
+## 🌐 Tradução para Português
+
+O código foi traduzido para português brasileiro para melhorar a legibilidade e manutenção:
+
+### Classes CSS/HTML Principais:
+- `.header` → `.cabecalho`
+- `.nav` → `.navegacao`
+- `.hero` → `.secao-hero`
+- `.services` → `.secao-servicos`
+- `.stats` → `.secao-estatisticas`
+- `.cta` → `.secao-chamada-acao`
+- `.footer` → `.rodape`
+
+### Benefícios da Tradução:
+- **Melhor Legibilidade**: Nomes de classes em português facilitam o entendimento
+- **Manutenibilidade**: Código mais intuitivo para desenvolvedores brasileiros
+- **Consistência**: Padronização da nomenclatura em português
+- **Documentação**: Facilita a compreensão da estrutura do layout
+
 ## 🚀 Funcionalidades
 
 - **Header Fixo**: Navegação sempre acessível

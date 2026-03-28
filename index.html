@@ -10,6 +10,10 @@
   <meta name="description" content="Wallef Ryan — programador iniciante. Landing pages e sites para profissionais." />
   <!-- Descrição para SEO -->
   <title>Wallef Ryan — Portfólio</title>
+  <!-- Favicon padrão -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/LOGO_17.1.png">
+  <!-- Alternativa para compatibilidade com mais navegadores -->
+  <link rel="shortcut icon" ref="img/LOGO_17.1.png" type="image/x-icon">
   <!-- Título da página -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,48 +26,182 @@
 </head>
 
 <body>
-  <!-- Fundo decorativo animado -->
-  <div class="fundo-pagina" aria-hidden="true"></div>
-  <!-- Grade de fundo sutil -->
-  <div class="sobreposicao-grade" aria-hidden="true"></div>
-
-  <!-- Cabeçalho fixo com navegação -->
-  <header>
-    <div class="conteudo-central barra-navegacao">
-      <!-- Logo/nome da marca -->
-      <a class="marca" href="#">Wallef Ryan <span>{ dev }</span></a>
-      <!-- Navegação principal -->
-      <nav class="links-navegacao" aria-label="Principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Landing pages</a>
-        <a href="#contato">Contato</a>
-        <!-- Botão CTA na navegação -->
-        <a class="botao-pequeno" href="#projetos">Ver trabalhos</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Fundo 3D de pontos animados — fixo em toda a página -->
+  <div id="fundo-pontos-3d" style="position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;"></div>
 
   <main>
-    <!-- Seção de abertura/hero -->
-    <section class="secao-abertura">
-      <div class="conteudo-central">
-        <!-- Contexto/etiqueta do profissional -->
-        <p class="etiqueta-contexto">Programador iniciante · foco em presença online</p>
-        <h1>
-          Olá, eu sou <span class="nome-destaque">Wallef Ryan</span>
-        </h1>
-        <!-- Texto introdutório principal -->
-        <p class="texto-introducao">
-          Crio <strong>landing pages e páginas simples</strong> para
-          profissionais que querem divulgar o trabalho na internet com clareza e bom visual — sem complicação.
-        </p>
-        <!-- Grupo de botões de ação -->
-        <div class="grupo-botoes">
-          <a class="botao-primario" href="#projetos">Ver landing pages</a>
-          <a class="botao-contorno" href="#contato">Falar comigo</a>
-        </div>
-      </div>
+    <!-- Seção de abertura — órbita interativa -->
+    <section class="secao-abertura" style="padding:0;overflow:hidden;position:relative;">
+      <div id="raiz-orbital" style="width:100%;height:100vh;position:relative;z-index:1;"></div>
     </section>
+
+    <!-- Scripts React para a órbita -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const { useState, useEffect, useRef } = React;
+
+      /* Ícones SVG inline */
+      const Icones = {
+        Pessoa: () => (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        ),
+        Pagina: () => (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        ),
+        Codigo: () => (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        ),
+        Envelope: () => (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        ),
+        Telefone: () => (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        ),
+        Seta: () => (
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        ),
+      };
+
+      /* Dados dos nós — cada um com link para a seção correspondente */
+      const dadosNos = [
+        { id:1, titulo:"Sobre",            ancora:"#sobre",    Icone: Icones.Pessoa,   idsConexoes:[2],   energia:100 },
+        { id:2, titulo:"Landing pages",    ancora:"#projetos", Icone: Icones.Pagina,   idsConexoes:[1,3], energia:90  },
+        { id:3, titulo:"Em desenvolvimento", ancora:"#projetos", Icone: Icones.Codigo, idsConexoes:[2,4], energia:60  },
+        { id:4, titulo:"Contato",          ancora:"#contato",  Icone: Icones.Envelope, idsConexoes:[3,5], energia:40  },
+        { id:5, titulo:"Fale comigo",      ancora:"#contato",  Icone: Icones.Telefone, idsConexoes:[4],   energia:20  },
+      ];
+
+      function OrbitalHero({ dados }) {
+        const [angulo, setAngulo]           = useState(0);
+        const [rotacaoAuto, setRotacaoAuto] = useState(true);
+        const [idAtivo, setIdAtivo]         = useState(null);
+        const refContainer                  = useRef(null);
+
+        /* Rotação automática */
+        useEffect(() => {
+          if (!rotacaoAuto) return;
+          const intervalo = setInterval(() => setAngulo(a => (a + 0.3) % 360), 50);
+          return () => clearInterval(intervalo);
+        }, [rotacaoAuto]);
+
+        /* Calcula posição orbital */
+        const calcularPosicao = (indice, total) => {
+          const graus = ((indice / total) * 360 + angulo) % 360;
+          const rad   = (graus * Math.PI) / 180;
+          /* Raio proporcional à tela — máx 290px, mín em mobile */
+          const raio  = Math.min(290, window.innerWidth * 0.42, window.innerHeight * 0.42);
+          const offsetY = 0;
+          return {
+            x:         raio * Math.cos(rad),
+            y:         raio * Math.sin(rad) + offsetY,
+            zIndex:    Math.round(100 + 50 * Math.cos(rad)),
+            opacidade: Math.max(0.4, Math.min(1, 0.4 + 0.6 * ((1 + Math.sin(rad)) / 2))),
+          };
+        };
+
+        /* Navega para a seção ao clicar no nó */
+        const aoClicarNo = (e, ancora) => {
+          e.stopPropagation();
+          setRotacaoAuto(false);
+          setTimeout(() => setRotacaoAuto(true), 2000);
+          const alvo = document.querySelector(ancora);
+          if (alvo) alvo.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        /* Retoma rotação ao clicar no fundo */
+        const aoClicarFundo = (e) => {
+          if (!e.target.closest('.no-item-orbital')) {
+            setIdAtivo(null);
+            setRotacaoAuto(true);
+          }
+        };
+
+        return (
+          <div className="container-orbital" ref={refContainer} onClick={aoClicarFundo}>
+            <div className="area-orbita">
+
+              {/* Centro — conteúdo hero */}
+              <div className="no-central-orbital">
+                <div className="onda-orbital-1"></div>
+                <div className="onda-orbital-2"></div>
+                {/* Logo acima da etiqueta */}
+                <img src="img/LOGO_17.1.png" alt="Logo Wallef Ryan" className="logo-orbital" />
+                <p className="etiqueta-orbital">Programador iniciante · presença online</p>
+                <h1 className="titulo-orbital">
+                  Olá, eu sou <span className="nome-destaque-orbital">Wallef Ryan</span>
+                </h1>
+                <p className="descricao-orbital">
+                  Crio <strong>landing pages</strong> para profissionais que querem divulgar o trabalho com clareza e bom visual.
+                </p>
+              </div>
+
+              {/* Anel */}
+              <div className="anel-orbita"></div>
+
+              {/* Nós orbitando */}
+              {dados.map((item, indice) => {
+                const pos   = calcularPosicao(indice, dados.length);
+                const ativo = idAtivo === item.id;
+                const Icone = item.Icone;
+
+                return (
+                  <div
+                    key={item.id}
+                    className="no-item-orbital"
+                    style={{
+                      transform: `translate(${pos.x}px, ${pos.y}px)`,
+                      zIndex:    ativo ? 200 : pos.zIndex,
+                      opacity:   ativo ? 1   : pos.opacidade,
+                    }}
+                    onClick={e => { setIdAtivo(item.id); aoClicarNo(e, item.ancora); }}
+                  >
+                    {/* Brilho */}
+                    <div className="brilho-no" style={{
+                      width:      `${item.energia * 0.4 + 40}px`,
+                      height:     `${item.energia * 0.4 + 40}px`,
+                      left:       `-${(item.energia * 0.4) / 2}px`,
+                      top:        `-${(item.energia * 0.4) / 2}px`,
+                      background: `radial-gradient(circle, rgba(201,162,39,0.15) 0%, transparent 70%)`,
+                    }}/>
+
+                    {/* Círculo */}
+                    <div className={`circulo-no-orbital ${ativo ? 'ativo' : 'padrao'}`}>
+                      <Icone />
+                    </div>
+
+                    {/* Rótulo */}
+                    <div className={`rotulo-no-orbital ${ativo ? 'ativo' : ''}`}>{item.titulo}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById('raiz-orbital')).render(
+        <OrbitalHero dados={dadosNos} />
+      );
+    </script>
 
     <!-- Seção sobre mim -->
     <section id="sobre">
@@ -71,19 +209,18 @@
         <!-- Cabeçalho da seção -->
         <div class="cabecalho-secao">
           <h2>Sobre</h2>
-          <p>Estou no começo da jornada em programação e aprendendo na prática, projeto a projeto.</p>
+          <p>Aprendendo na prática, construindo projeto a projeto.</p>
         </div>
         <!-- Conteúdo principal da seção sobre -->
         <div class="caixa-sobre">
           <p>
-            Sou o <strong>Wallef Ryan</strong>, programador iniciante. Meu foco agora é ajudar
-            <strong>médicos, psicólogos, dentistas, freelancers</strong> e outros profissionais que precisam de uma
-            <strong>página ou site leve</strong> para apresentar serviços, contato e confiança — em vez de só depender
-            de redes sociais.
+            Sou o <strong>Wallef Ryan</strong>, desenvolvedor em formação com foco em criar
+            <strong>presença digital de qualidade</strong> para quem trabalha de forma independente.
+            Atendo <strong>médicos, psicólogos, dentistas, personal trainers, advogados e freelancers</strong>
+            que querem ir além das redes sociais e ter um espaço próprio na internet — com identidade, clareza e profissionalismo.
           </p>
           <p>
-            Cada landing que eu desenvolver vai aparecer aqui no portfólio, para você ver o estilo do trabalho antes de
-            fechar comigo.
+            Cada projeto que entrego aparece aqui no portfólio. Assim você vê o padrão do trabalho antes de qualquer conversa.
           </p>
           <!-- Lista de tecnologias aprendidas -->
           <div class="linha-tecnologias" aria-label="Tecnologias em aprendizado">
@@ -106,8 +243,9 @@
           <h2>Landing pages</h2>
           <p>Clique em um card para ver as opções de demonstração daquela área.</p>
         </div>
-        <!-- Grade de cards de projetos -->
-        <div class="grade-projetos">
+        <!-- Carrossel de cards de projetos -->
+        <div class="carrossel-wrapper">
+          <div class="grade-projetos" id="carrossel-projetos">
 
           <!-- Card para área da saúde -->
           <article class="card-projeto">
@@ -195,9 +333,7 @@
           </article>
 
         </div>
-
-        <!-- Comentário sobre cards removidos da página principal -->
-        <!-- Pequenos cards dos projetos - removidos da página principal -->
+        </div>
       </div>
     </section>
 
@@ -213,7 +349,6 @@
             <!-- Item de contato WhatsApp -->
             <div class="item-contato">
               <span class="rotulo-contato">WhatsApp</span>
-              <!-- Troque 5511999999999 pelo seu número (DDI+DDD+número, só dígitos) -->
               <a class="link-whatsapp link-com-icone"
                 href="https://wa.me/5561995510006?text=Ol%C3%A1%2C%20vim%20pelo%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
                 target="_blank" rel="noopener noreferrer">
@@ -276,8 +411,202 @@
     </div>
   </div>
 
-  <!-- Script principal do JavaScript -->
+  <!-- Three.js — fundo 3D de pontos em todas as seções -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof THREE === 'undefined') return;
+      const container = document.getElementById('fundo-pontos-3d');
+      if (!container) return;
+
+      const SEPARACAO = 150, QTD_X = 40, QTD_Y = 60;
+      const cena   = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+      camera.position.set(0, 355, 1220);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor(0x000000, 0);
+      renderer.domElement.style.position = 'absolute';
+      renderer.domElement.style.top = '0';
+      renderer.domElement.style.left = '0';
+      container.appendChild(renderer.domElement);
+
+      const posicoes = [], cores = [];
+      for (let ix = 0; ix < QTD_X; ix++) {
+        for (let iy = 0; iy < QTD_Y; iy++) {
+          posicoes.push(ix * SEPARACAO - (QTD_X * SEPARACAO) / 2, 0, iy * SEPARACAO - (QTD_Y * SEPARACAO) / 2);
+          cores.push(201/255, 162/255, 39/255);
+        }
+      }
+
+      const geometria = new THREE.BufferGeometry();
+      geometria.setAttribute('position', new THREE.Float32BufferAttribute(posicoes, 3));
+      geometria.setAttribute('color', new THREE.Float32BufferAttribute(cores, 3));
+      const material = new THREE.PointsMaterial({ size: 8, vertexColors: true, transparent: true, opacity: 0.6, sizeAttenuation: true });
+      cena.add(new THREE.Points(geometria, material));
+
+      let contador = 0;
+      function animar() {
+        requestAnimationFrame(animar);
+        const atrib = geometria.attributes.position;
+        const arr = atrib.array;
+        let i = 0;
+        for (let ix = 0; ix < QTD_X; ix++) {
+          for (let iy = 0; iy < QTD_Y; iy++) {
+            arr[i * 3 + 1] = Math.sin((ix + contador) * 0.3) * 50 + Math.sin((iy + contador) * 0.5) * 50;
+            i++;
+          }
+        }
+        atrib.needsUpdate = true;
+        renderer.render(cena, camera);
+        contador += 0.1;
+      }
+      animar();
+
+      window.addEventListener('resize', function () {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    });
+  </script>
+
+  <!-- Script principal -->
   <script src="js/main.js" defer></script>
+
+  <!-- Carrossel de projetos -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const wrapper  = document.querySelector('.carrossel-wrapper');
+      const trilho   = document.getElementById('carrossel-projetos');
+      if (!wrapper || !trilho) return;
+
+      let arrastando    = false;
+      let moveu         = false;
+      let inicioX       = 0;
+      let scrollInicio  = 0;
+      let posicaoAtual  = 0;
+      let velocidade    = 0;
+      let ultimoX       = 0;
+      let pausado       = false;
+
+      /* Duplica os cards para loop infinito */
+      const cards = Array.from(trilho.children);
+      cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        /* Clones também abrem o painel */
+        const btn = clone.querySelector('.ativador-card');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            if (moveu) return;
+            const chave = btn.getAttribute('data-painel');
+            if (chave && typeof abrirPainel === 'function') abrirPainel(chave);
+          });
+        }
+        trilho.appendChild(clone);
+      });
+
+      /* Scroll automático */
+      function scrollAuto() {
+        if (!pausado) {
+          posicaoAtual += 0.5;
+          const larguraTotal = trilho.scrollWidth / 2;
+          if (posicaoAtual >= larguraTotal) posicaoAtual = 0;
+          trilho.style.transform = `translateX(-${posicaoAtual}px)`;
+        }
+        requestAnimationFrame(scrollAuto);
+      }
+
+      /* Pausa quando modal abre, retoma quando fecha */
+      const painel = document.getElementById('painel-opcoes');
+      if (painel) {
+        const observer = new MutationObserver(() => {
+          pausado = painel.classList.contains('painel-opcoes--visivel');
+        });
+        observer.observe(painel, { attributes: true, attributeFilter: ['class'] });
+      }
+
+      /* Arrastar com mouse */
+      wrapper.addEventListener('mousedown', function (e) {
+        arrastando   = true;
+        pausado      = true;
+        moveu        = false;
+        inicioX      = e.pageX;
+        scrollInicio = posicaoAtual;
+        ultimoX      = e.pageX;
+      });
+
+      document.addEventListener('mousemove', function (e) {
+        if (!arrastando) return;
+        const delta = Math.abs(e.pageX - inicioX);
+        if (delta > 5) moveu = true;
+        if (!moveu) return;
+        velocidade   = ultimoX - e.pageX;
+        ultimoX      = e.pageX;
+        posicaoAtual = scrollInicio + (inicioX - e.pageX);
+        posicaoAtual = Math.max(0, posicaoAtual);
+        trilho.style.transform = `translateX(-${posicaoAtual}px)`;
+      });
+
+      document.addEventListener('mouseup', function () {
+        if (!arrastando) return;
+        arrastando = false;
+        if (!moveu) {
+          pausado = false;
+          return;
+        }
+        function inercia() {
+          if (Math.abs(velocidade) < 0.5) {
+            pausado = false;
+            return;
+          }
+          posicaoAtual += velocidade * 0.9;
+          velocidade   *= 0.92;
+          posicaoAtual  = Math.max(0, posicaoAtual);
+          trilho.style.transform = `translateX(-${posicaoAtual}px)`;
+          requestAnimationFrame(inercia);
+        }
+        inercia();
+      });
+
+      /* Arrastar com toque */
+      wrapper.addEventListener('touchstart', function (e) {
+        moveu        = false;
+        inicioX      = e.touches[0].pageX;
+        scrollInicio = posicaoAtual;
+        ultimoX      = e.touches[0].pageX;
+      }, { passive: true });
+
+      wrapper.addEventListener('touchmove', function (e) {
+        const delta = Math.abs(e.touches[0].pageX - inicioX);
+        if (delta > 5) moveu = true;
+        if (!moveu) return;
+        velocidade   = ultimoX - e.touches[0].pageX;
+        ultimoX      = e.touches[0].pageX;
+        posicaoAtual = scrollInicio + (inicioX - e.touches[0].pageX);
+        posicaoAtual = Math.max(0, posicaoAtual);
+        trilho.style.transform = `translateX(-${posicaoAtual}px)`;
+      }, { passive: true });
+
+      wrapper.addEventListener('touchend', function () {
+        if (!moveu) return;
+        function inercia() {
+          if (Math.abs(velocidade) < 0.5) return;
+          posicaoAtual += velocidade * 0.9;
+          velocidade   *= 0.92;
+          posicaoAtual  = Math.max(0, posicaoAtual);
+          trilho.style.transform = `translateX(-${posicaoAtual}px)`;
+          requestAnimationFrame(inercia);
+        }
+        inercia();
+      });
+
+      scrollAuto();
+    });
+  </script>
 </body>
 
 </html>
